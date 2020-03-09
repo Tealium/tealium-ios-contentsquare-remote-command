@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ContentsquareTrackable {
+public protocol ContentsquareTrackable {
     func sendScreenView(screenName: String)
     
     func sendTransaction(price: Double, currency: Int, transactionId: String?)

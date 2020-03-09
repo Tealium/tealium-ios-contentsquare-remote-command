@@ -11,11 +11,11 @@ import ContentsquareModule
 
 public class ContentsquareTracker: ContentsquareTrackable {
     
-    func sendScreenView(screenName: String) {
+    public func sendScreenView(screenName: String) {
         Contentsquare.send(screenViewWithName: screenName)
     }
     
-    func sendTransaction(price: Double, currency: Int, transactionId: String?) {
+    public func sendTransaction(price: Double, currency: Int, transactionId: String?) {
         guard let currency = Currency(rawValue: currency) else {
             print("Error with currency value.")
             return
@@ -24,7 +24,7 @@ public class ContentsquareTracker: ContentsquareTrackable {
         Contentsquare.send(transaction: transaction)
     }
     
-    func sendDynamicVar(dynamicVar: [String: Any]) {
+    public func sendDynamicVar(dynamicVar: [String: Any]) {
         dynamicVar.forEach { key, value in
             if let value = value as? String {
                 do {
@@ -46,23 +46,23 @@ public class ContentsquareTracker: ContentsquareTrackable {
         }
     }
     
-    func stopTracking() {
+    public func stopTracking() {
         Contentsquare.stopTracking()
     }
     
-    func resumeTracking() {
+    public func resumeTracking() {
         Contentsquare.resumeTracking()
     }
     
-    func forgetMe() {
+    public func forgetMe() {
         Contentsquare.forgetMe()
     }
     
-    func optIn() {
+    public func optIn() {
         Contentsquare.optIn()
     }
     
-    func optOut() {
+    public func optOut() {
         Contentsquare.optOut()
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2020 Jonathan Wong. All rights reserved.
 //
 
-extension ContentsquareRemoteCommand {
+extension ContentsquareCommand {
     enum Contentsquare {
         
         enum Commands {
