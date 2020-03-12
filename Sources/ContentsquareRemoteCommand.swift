@@ -59,9 +59,9 @@ public class ContentsquareCommand {
                     let currency: Int = options[Contentsquare.TransactionProperties.currency] as? Int else { return }
                 let transactionId: String? = options[Contentsquare.TransactionProperties.transactionId] as? String
                 contentsquareTracker.sendTransaction(price: price, currency: currency, transactionId: transactionId)
-           case Contentsquare.Commands.sendDynamicVar:
-            guard let dynamicVar = payload[Contentsquare.DynamicVar.dynamicVar] as? [String: Any] else { return }
-            contentsquareTracker.sendDynamicVar(dynamicVar: dynamicVar)
+            case Contentsquare.Commands.sendDynamicVar:
+                guard let dynamicVar = payload[Contentsquare.DynamicVar.dynamicVar] as? [String: Any] else { return }
+                contentsquareTracker.sendDynamicVar(dynamicVar: dynamicVar)
             case Contentsquare.Commands.stopTracking:
                 contentsquareTracker.stopTracking()
             case Contentsquare.Commands.resumeTracking:

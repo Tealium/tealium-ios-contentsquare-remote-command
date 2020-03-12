@@ -20,5 +20,5 @@ public protocol ContentsquareTrackable {
     func forgetMe()
     func optIn()
     func optOut()
-    
+
 }
