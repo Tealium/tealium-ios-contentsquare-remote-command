@@ -39,7 +39,7 @@ extension TransactionView {
         guard let id = id else {
             TealiumHelper.track(title: "transaction", data:
             ["transaction": ["price": price,
-                             "currency": 1
+                             "currency": "EUR"
                              ]])
             return
         }

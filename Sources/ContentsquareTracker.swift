@@ -17,8 +17,8 @@ public class ContentsquareTracker: ContentsquareTrackable {
         Contentsquare.send(screenViewWithName: screenName)
     }
     
-    public func sendTransaction(price: Double, currency: Int, transactionId: String?) {
-        guard let currency = CurrencyWrapper(rawValue: currency)?.currency() else {
+    public func sendTransaction(price: Double, currency: String, transactionId: String?) {
+        guard let currency = CurrencyWrapper(rawValue: currency.lowercased())?.currency() else {
             print("Error with currency value.")
             return
         }
@@ -67,12 +67,10 @@ public class ContentsquareTracker: ContentsquareTrackable {
     public func optOut() {
         Contentsquare.optOut()
     }
-    
-//    private
 }
 
 /// Maps to Contentsquare's Currency type
-public enum CurrencyWrapper : Int, Codable {
+public enum CurrencyWrapper: String, Codable {
     case mop
     case bmd
     case kes

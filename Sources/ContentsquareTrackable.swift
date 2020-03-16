@@ -11,7 +11,7 @@ import Foundation
 public protocol ContentsquareTrackable {
     func sendScreenView(screenName: String)
     
-    func sendTransaction(price: Double, currency: Int, transactionId: String?)
+    func sendTransaction(price: Double, currency: String, transactionId: String?)
     
     func sendDynamicVar(dynamicVar: [String: Any])
     

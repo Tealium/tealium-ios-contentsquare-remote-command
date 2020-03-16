@@ -56,7 +56,7 @@ public class ContentsquareCommand {
                     return
                 }
                 guard let price: Double = options[Contentsquare.TransactionProperties.price] as? Double,
-                    let currency: Int = options[Contentsquare.TransactionProperties.currency] as? Int else { return }
+                    let currency: String = options[Contentsquare.TransactionProperties.currency] as? String else { return }
                 let transactionId: String? = options[Contentsquare.TransactionProperties.transactionId] as? String
                 contentsquareTracker.sendTransaction(price: price, currency: currency, transactionId: transactionId)
             case Contentsquare.Commands.sendDynamicVar:
