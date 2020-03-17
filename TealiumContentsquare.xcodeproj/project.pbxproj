@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B4B6E73241B28920084E720 /* ContentsquareTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B6E72241B28920084E720 /* ContentsquareTrackerTests.swift */; };
-		4BE613FA2412F81F00C4B1EB /* ContentsquareRemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE613F92412F81F00C4B1EB /* ContentsquareRemoteCommand.swift */; };
+		4BE613FA2412F81F00C4B1EB /* ContentsquareCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE613F92412F81F00C4B1EB /* ContentsquareCommand.swift */; };
 		4BE613FC2412F87E00C4B1EB /* ContentsquareTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE613FB2412F87E00C4B1EB /* ContentsquareTracker.swift */; };
 		4BE613FE2412F88A00C4B1EB /* ContentsquareTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE613FD2412F88A00C4B1EB /* ContentsquareTrackable.swift */; };
 		4BE614022412FF7800C4B1EB /* TealiumTagManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BE614012412FF7700C4B1EB /* TealiumTagManagement.framework */; platformFilter = ios; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		4B4B6E72241B28920084E720 /* ContentsquareTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareTrackerTests.swift; sourceTree = "<group>"; };
-		4BE613F92412F81F00C4B1EB /* ContentsquareRemoteCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareRemoteCommand.swift; sourceTree = "<group>"; };
+		4BE613F92412F81F00C4B1EB /* ContentsquareCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareCommand.swift; sourceTree = "<group>"; };
 		4BE613FB2412F87E00C4B1EB /* ContentsquareTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareTracker.swift; sourceTree = "<group>"; };
 		4BE613FD2412F88A00C4B1EB /* ContentsquareTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareTrackable.swift; sourceTree = "<group>"; };
 		4BE614012412FF7700C4B1EB /* TealiumTagManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TealiumTagManagement.framework; path = Carthage/Build/iOS/TealiumTagManagement.framework; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4BEB131F24104EDF0060D075 /* ContentsquareConstants.swift */,
-				4BE613F92412F81F00C4B1EB /* ContentsquareRemoteCommand.swift */,
+				4BE613F92412F81F00C4B1EB /* ContentsquareCommand.swift */,
 				4BE613FD2412F88A00C4B1EB /* ContentsquareTrackable.swift */,
 				4BE613FB2412F87E00C4B1EB /* ContentsquareTracker.swift */,
 				4BEB1308241046820060D075 /* TealiumContentsquare.h */,
@@ -288,7 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BE613FE2412F88A00C4B1EB /* ContentsquareTrackable.swift in Sources */,
-				4BE613FA2412F81F00C4B1EB /* ContentsquareRemoteCommand.swift in Sources */,
+				4BE613FA2412F81F00C4B1EB /* ContentsquareCommand.swift in Sources */,
 				4BEB132024104EDF0060D075 /* ContentsquareConstants.swift in Sources */,
 				4BE613FC2412F87E00C4B1EB /* ContentsquareTracker.swift in Sources */,
 			);
