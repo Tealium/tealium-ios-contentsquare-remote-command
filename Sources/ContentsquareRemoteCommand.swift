@@ -15,7 +15,7 @@ import TealiumTagManagement
 import TealiumRemoteCommands
 #endif
 
-public class ContentsquareCommand {
+public class ContentsquareRemoteCommand {
     
     let contentsquareTracker:
     ContentsquareTrackable

@@ -2,14 +2,14 @@ PODS:
   - CS_iOS_SDK (3.0.0)
   - tealium-swift (1.9.1):
     - tealium-swift/TealiumFull (= 1.9.1)
-  - tealium-swift/Core (1.9.1)
-  - tealium-swift/TealiumDelegate (1.9.1):
+  - tealium-swift/Core (1.9.3)
+  - tealium-swift/TealiumDelegate (1.9.3):
     - tealium-swift/Core
   - tealium-swift/TealiumFull (1.9.1):
     - TealiumCrashReporter
-  - tealium-swift/TealiumRemoteCommands (1.9.1):
+  - tealium-swift/TealiumRemoteCommands (1.9.3):
     - tealium-swift/Core
-  - tealium-swift/TealiumTagManagement (1.9.1):
+  - tealium-swift/TealiumTagManagement (1.9.3):
     - tealium-swift/Core
   - TealiumContentsquare (0.0.1):
     - CS_iOS_SDK
@@ -21,7 +21,7 @@ PODS:
 
 DEPENDENCIES:
   - tealium-swift
-  - TealiumContentsquare (from `/Users/jonathanwong/Projects/remote-commands/tealium-ios-contentsquare-remote-command`)
+  - TealiumContentsquare (from `/Users/christina/Projects/work-repos/github/tealium-ios-contentsquare-remote-command`)
 
 SPEC REPOS:
   trunk:
@@ -31,14 +31,14 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   TealiumContentsquare:
-    :path: "/Users/jonathanwong/Projects/remote-commands/tealium-ios-contentsquare-remote-command"
+    :path: "/Users/christina/Projects/work-repos/github/tealium-ios-contentsquare-remote-command"
 
 SPEC CHECKSUMS:
   CS_iOS_SDK: b80d4df95751c8fb8d7b1babf0e0390a701bfef9
-  tealium-swift: bb99ff358f297765346ab98e416196420511a677
+  tealium-swift: 8735caa69eeb0e7d834c290a6557c69c5f3667ee
   TealiumContentsquare: 5551cd656049ebc8402a902a81abf1647a8e3d31
   TealiumCrashReporter: 74fbdd3703a65740c04e983cd0b360c673199b53
 
-PODFILE CHECKSUM: b6695431112461bb178b4820cf469e6942cc396f
+PODFILE CHECKSUM: 32fae7180b3e050152ab12674d27d22cb3351bf5
 
-COCOAPODS: 1.9.0
+COCOAPODS: 1.9.1

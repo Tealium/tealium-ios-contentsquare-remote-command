@@ -6,6 +6,6 @@ target 'TealiumContentsquareExample' do
   use_frameworks!
 
   # Pods for TealiumContentsquareExample
-  pod "tealium-swift"
-  pod "TealiumContentsquare", :path => "/Users/jonathanwong/Projects/remote-commands/tealium-ios-contentsquare-remote-command"
+  pod "tealium-swift", "~> 1.9"
+  pod "TealiumContentsquare", "1.0"
 end

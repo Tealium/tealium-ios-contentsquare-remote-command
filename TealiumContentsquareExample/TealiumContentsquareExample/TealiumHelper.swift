@@ -28,14 +28,13 @@ class TealiumHelper {
         config.logLevel = .verbose
         config.shouldUseRemotePublishSettings = true
         config.batchingEnabled = false
-        self.tealium?.consentManager()?.setUserConsentStatus(.consented)
         
         tealium = Tealium(config: config) { responses in
             guard let remoteCommands = self.tealium?.remoteCommands() else {
                 return
             }
             let contentsquareTracker = ContentsquareTracker()
-            let contentsquareCommand = ContentsquareCommand(contentsquareTracker: contentsquareTracker)
+            let contentsquareCommand = ContentsquareRemoteCommand(contentsquareTracker: contentsquareTracker)
             let contentsquareRemoteCommand = contentsquareCommand.remoteCommand()
             remoteCommands.add(contentsquareRemoteCommand)
         }
