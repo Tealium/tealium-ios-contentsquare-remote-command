@@ -11,7 +11,7 @@ extension ContentsquareRemoteCommand {
         
         enum Commands {
             static let commandKey = "command_name"
-            static let separator = ","
+            static let separator: Character = ","
             
             static let sendScreenView = "sendscreenview"
             static let sendTransaction = "sendtransaction"
