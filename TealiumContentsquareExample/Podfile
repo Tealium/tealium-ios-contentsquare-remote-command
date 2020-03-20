@@ -7,5 +7,5 @@ target 'TealiumContentsquareExample' do
 
   # Pods for TealiumContentsquareExample
   pod "tealium-swift"
-  pod "TealiumContentsquare", :path => "/Users/jonathanwong/Projects/remote-commands/tealium-ios-contentsquare-remote-command"
+  pod "TealiumContentsquare"
 end
