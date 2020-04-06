@@ -16,11 +16,11 @@ import XCTest
 class ContentsquareTrackerTests: XCTestCase {
 
     let contentsquareTracker = MockContentsquareTracker()
-    var contentsquareCommand: ContentsquareCommand!
+    var contentsquareCommand: ContentsquareRemoteCommand!
     var remoteCommand: TealiumRemoteCommand!
     
     override func setUp() {
-        contentsquareCommand = ContentsquareCommand(contentsquareTracker: contentsquareTracker)
+        contentsquareCommand = ContentsquareRemoteCommand(contentsquareTracker: contentsquareTracker)
         remoteCommand = contentsquareCommand.remoteCommand()
     }
 
@@ -40,7 +40,7 @@ class ContentsquareTrackerTests: XCTestCase {
 
     func testTransactionCalledWithKey() {
         contentsquareCommand.parseCommands(["sendtransaction"], payload: ["transaction": ["price": 1.99,
-                                                                                          "currency": Int(1)]])
+                                                                                          "currency": "USD"]])
         XCTAssertEqual(1, contentsquareTracker.sendTransactionCallCount)
     }
     
@@ -52,7 +52,7 @@ class ContentsquareTrackerTests: XCTestCase {
     
     func testTransactionCalledWithIdKey() {
         contentsquareCommand.parseCommands(["sendtransaction"], payload: ["transaction": ["price": 1.99,
-                                                                                          "currency": Int(1),
+                                                                                          "currency": "CAD",
                                                                                           "id": "123"]])
         XCTAssertEqual(1, contentsquareTracker.sendTransactionCallCount)
     }
