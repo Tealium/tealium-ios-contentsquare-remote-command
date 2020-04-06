@@ -11,7 +11,6 @@ import XCTest
 
 class MockContentsquareTracker: ContentsquareTrackable {
 
-
     var sendScreenViewCallCount = 0
     var sendTransactionCallCount = 0
     var sendDynamicVarCallCount = 0
@@ -25,7 +24,7 @@ class MockContentsquareTracker: ContentsquareTrackable {
         sendScreenViewCallCount = 1
     }
     
-    func sendTransaction(price: Double, currency: Int, transactionId: String?) {
+    func sendTransaction(price: Double, currency: String, transactionId: String?) {
         sendTransactionCallCount = 1
     }
 

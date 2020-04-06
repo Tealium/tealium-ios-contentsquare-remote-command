@@ -6,12 +6,12 @@
 //  Copyright © 2020 Jonathan Wong. All rights reserved.
 //
 
-extension ContentsquareCommand {
+extension ContentsquareRemoteCommand {
     enum Contentsquare {
         
         enum Commands {
             static let commandKey = "command_name"
-            static let separator = ","
+            static let separator: Character = ","
             
             static let sendScreenView = "sendscreenview"
             static let sendTransaction = "sendtransaction"

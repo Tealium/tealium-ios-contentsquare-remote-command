@@ -15,7 +15,7 @@ import TealiumTagManagement
 import TealiumRemoteCommands
 #endif
 
-public class ContentsquareCommand {
+public class ContentsquareRemoteCommand {
     
     let contentsquareTracker:
     ContentsquareTrackable
@@ -34,7 +34,7 @@ public class ContentsquareCommand {
                                             return
                                         }
                                         
-                                        let commands = command.split(separator: ",")
+                                        let commands = command.split(separator: Contentsquare.Commands.separator)
                                         let formatted = commands.map { command in
                                             return command.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
                                         }
