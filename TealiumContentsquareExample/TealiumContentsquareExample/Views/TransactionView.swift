@@ -37,16 +37,12 @@ struct TransactionView: View {
 extension TransactionView {
     func trackTransactionView(price: Double, id: String?) {
         guard let id = id else {
-            TealiumHelper.track(title: "transaction", data:
-            ["transaction": ["price": price,
-                             "currency": "EUR"
-                             ]])
+            TealiumHelper.track(title: "transaction",
+                                data: ["price": price, "currency": "EUR"])
             return
         }
-        TealiumHelper.track(title: "transaction", data:
-        ["transaction": ["price": price,
-                         "currency": 1,
-                         "transaction_id": id]])
+        TealiumHelper.track(title: "transaction",
+                            data: ["price": price,"currency": "USD","transaction_id": id])
     }
 }
 

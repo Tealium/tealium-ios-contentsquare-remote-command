@@ -3,25 +3,26 @@
 //  TealiumContentsquare
 //
 //  Created by Jonathan Wong on 3/4/20.
-//  Copyright © 2020 Jonathan Wong. All rights reserved.
+//  Copyright © 2020 Tealium. All rights reserved.
 //
 
 extension ContentsquareRemoteCommand {
     enum Contentsquare {
         
-        enum Commands {
-            static let commandKey = "command_name"
-            static let separator: Character = ","
-            
-            static let sendScreenView = "sendscreenview"
-            static let sendTransaction = "sendtransaction"
-            static let sendDynamicVar = "senddynamicvar"
-            static let stopTracking = "stoptracking"
-            static let resumeTracking = "resumetracking"
-            static let forgetMe = "forgetme"
-            static let optIn = "optin"
-            static let optOut = "optout"
-            
+        static let commandId = "contentsquare"
+        static let description = "Contentsquare Remote Command"
+        static let commandKey = "command_name"
+        static let separator: Character = ","
+        
+        enum Commands: String {
+            case sendScreenView = "sendscreenview"
+            case sendTransaction = "sendtransaction"
+            case sendDynamicVar = "senddynamicvar"
+            case stopTracking = "stoptracking"
+            case resumeTracking = "resumetracking"
+            case forgetMe = "forgetme"
+            case optIn = "optin"
+            case optOut = "optout"
         }
         
         enum ScreenView {

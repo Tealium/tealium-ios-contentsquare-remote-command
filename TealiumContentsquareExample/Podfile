@@ -6,6 +6,7 @@ target 'TealiumContentsquareExample' do
   use_frameworks!
 
   # Pods for TealiumContentsquareExample
-  pod "tealium-swift", "~> 1.9"
-  pod "TealiumContentsquare", :path => "../"
+  # pod "TealiumContentsquare", :path => "../"
+  pod "tealium-swift", :path=> "/Users/christina/Projects/work-repos/github/tealium-swift-builder"
+  pod 'CS_iOS_SDK'
 end

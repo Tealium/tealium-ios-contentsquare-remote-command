@@ -21,6 +21,7 @@
 		4B4F33F02416F42D009C41B8 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F33EF2416F42D009C41B8 /* ScreenView.swift */; };
 		4B4F33F32416F957009C41B8 /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4F33F22416F957009C41B8 /* TransactionView.swift */; };
 		4B9781EA2419573C0021B638 /* DynamicVarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B9781E92419573C0021B638 /* DynamicVarView.swift */; };
+		CFEF6CF62527DFCA00902EC6 /* contentsquare.json in Resources */ = {isa = PBXBuildFile; fileRef = CFEF6CF22527DFCA00902EC6 /* contentsquare.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		4B4F33F22416F957009C41B8 /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
 		4B9781E92419573C0021B638 /* DynamicVarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicVarView.swift; sourceTree = "<group>"; };
 		91A882ADFA088997BE0E233A /* Pods-TealiumContentsquareExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TealiumContentsquareExample.release.xcconfig"; path = "Target Support Files/Pods-TealiumContentsquareExample/Pods-TealiumContentsquareExample.release.xcconfig"; sourceTree = "<group>"; };
+		CFEF6CF22527DFCA00902EC6 /* contentsquare.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = contentsquare.json; sourceTree = "<group>"; };
 		DE37BE8EAF8C7792D28D9949 /* Pods_TealiumContentsquareExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TealiumContentsquareExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 				4B4F33D92416D946009C41B8 /* SceneDelegate.swift */,
 				4B4F33DB2416D946009C41B8 /* ContentView.swift */,
 				4B4F33ED2416DE70009C41B8 /* TealiumHelper.swift */,
+				CFEF6CF22527DFCA00902EC6 /* contentsquare.json */,
 				4B4F33DD2416D948009C41B8 /* Assets.xcassets */,
 				4B4F33E22416D948009C41B8 /* LaunchScreen.storyboard */,
 				4B4F33E52416D948009C41B8 /* Info.plist */,
@@ -190,6 +193,7 @@
 			files = (
 				4B4F33E42416D948009C41B8 /* LaunchScreen.storyboard in Resources */,
 				4B4F33E12416D948009C41B8 /* Preview Assets.xcassets in Resources */,
+				CFEF6CF62527DFCA00902EC6 /* contentsquare.json in Resources */,
 				4B4F33DE2416D948009C41B8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
