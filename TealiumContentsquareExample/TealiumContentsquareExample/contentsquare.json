@@ -3,9 +3,9 @@
   "mappings": {
     "screen": "screen_name",
     "dynamic_var": "dynamic_var",
-    "price": "transaction.price",
-    "currency": "transaction.currency",
-    "transaction_id": "transaction.transaction_id"
+    "price": "purchase.price",
+    "currency": "purchase.currency",
+    "transaction_id": "purchase.transaction_id"
   },
   "commands": {
     "screen_title": "sendscreenview",

@@ -30,6 +30,7 @@ extension ContentsquareRemoteCommand {
         }
         
         enum TransactionProperties {
+            static let purchase = "purchase"
             static let transaction = "transaction"
             static let price = "price" // required
             static let currency = "currency" // required

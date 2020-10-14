@@ -51,9 +51,11 @@ public class ContentsquareRemoteCommand: RemoteCommand {
                 guard let screenName = payload[Contentsquare.ScreenView.screenName] as? String else { return }
                 contentsquareTracker.sendScreenView(screenName: screenName)
             case .sendTransaction:
-                guard let options = payload[Contentsquare.TransactionProperties.transaction] as? [String: Any] else {
-                    print("Contentsquare.TransactionProperties.transaction key is missing.")
-                    return
+                var options = [String: Any]()
+                if let transaction = payload[Contentsquare.TransactionProperties.transaction] as? [String: Any] {
+                    options = transaction
+                } else if let purchase = payload[Contentsquare.TransactionProperties.purchase] as? [String: Any] {
+                    options = purchase
                 }
                 guard let price: Double = options[Contentsquare.TransactionProperties.price] as? Double,
                     let currency: String = options[Contentsquare.TransactionProperties.currency] as? String else { return }

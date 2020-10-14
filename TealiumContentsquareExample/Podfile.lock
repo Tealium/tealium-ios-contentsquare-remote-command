@@ -1,8 +1,8 @@
 PODS:
   - CS_iOS_SDK (3.2.1)
-  - tealium-swift (2.0.1):
-    - tealium-swift/TealiumFull (= 2.0.1)
-  - tealium-swift/TealiumFull (2.0.1)
+  - tealium-swift (2.1.0):
+    - tealium-swift/TealiumFull (= 2.1.0)
+  - tealium-swift/TealiumFull (2.1.0)
 
 DEPENDENCIES:
   - CS_iOS_SDK
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CS_iOS_SDK: d4ab9a1fd87e8254ce888724cb56256362fe0c1a
-  tealium-swift: 076272449cf1c60fd9d15b156e0204fdf02da37f
+  tealium-swift: a670c2c6f3e7e5d775d9507387e8858a8541e526
 
 PODFILE CHECKSUM: 2fa462dfa913d72a41a3175b6b744204150c8736
 

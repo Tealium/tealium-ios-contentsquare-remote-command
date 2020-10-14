@@ -1,11 +1,11 @@
-////
-////  TealiumContentsquareTests.swift
-////  TealiumContentsquareTests
-////
-////  Created by Jonathan Wong on 3/4/20.
-////  Copyright © 2020 Jonathan Wong. All rights reserved.
-////
 //
+//  TealiumContentsquareTests.swift
+//  TealiumContentsquareTests
+//
+//  Created by Jonathan Wong on 3/4/20.
+//  Copyright © 2020 Tealium. All rights reserved.
+//
+
 import XCTest
 @testable import TealiumContentsquare
 

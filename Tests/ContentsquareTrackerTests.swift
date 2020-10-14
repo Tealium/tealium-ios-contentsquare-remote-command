@@ -3,7 +3,7 @@
 //  TealiumContentsquareTests
 //
 //  Created by Jonathan Wong on 3/12/20.
-//  Copyright © 2020 Jonathan Wong. All rights reserved.
+//  Copyright © 2020 Tealium. All rights reserved.
 //
 
 import XCTest
@@ -34,6 +34,12 @@ class ContentsquareTrackerTests: XCTestCase {
 
     func testTransactionCalledWithKey() {
         contentsquareCommand.processRemoteCommand(with: ["command_name": "sendtransaction", "transaction": ["price": 1.99,
+                                                                                          "currency": "USD"]])
+        XCTAssertEqual(1, contentsquareTracker.sendTransactionCallCount)
+    }
+    
+    func testTransactionCalledWithKeyJSON() {
+        contentsquareCommand.processRemoteCommand(with: ["command_name": "sendtransaction", "purchase": ["price": 1.99,
                                                                                           "currency": "USD"]])
         XCTAssertEqual(1, contentsquareTracker.sendTransactionCallCount)
     }
