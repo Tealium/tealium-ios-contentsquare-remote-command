@@ -3,7 +3,7 @@
 //  TealiumContentsquareExample
 //
 //  Created by Jonathan Wong on 3/11/20.
-//  Copyright © 2020 Jonathan Wong. All rights reserved.
+//  Copyright © 2020 Tealium. All rights reserved.
 //
 
 import SwiftUI

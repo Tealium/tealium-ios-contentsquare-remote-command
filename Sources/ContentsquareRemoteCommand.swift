@@ -17,10 +17,10 @@ import TealiumRemoteCommands
 
 public class ContentsquareRemoteCommand: RemoteCommand {
     
-    var contentsquareTracker: ContentsquareTrackable?
+    var contentsquareInstance: ContentsquareCommand?
     
-    public init(contentsquareTracker: ContentsquareTrackable = ContentsquareTracker(), type: RemoteCommandType = .webview) {
-        self.contentsquareTracker = contentsquareTracker
+    public init(contentsquareInstance: ContentsquareCommand = ContentsquareInstance(), type: RemoteCommandType = .webview) {
+        self.contentsquareInstance = contentsquareInstance
         weak var selfWorkaround: ContentsquareRemoteCommand?
         super.init(commandId: Contentsquare.commandId,
                    description: Contentsquare.description,
@@ -35,7 +35,7 @@ public class ContentsquareRemoteCommand: RemoteCommand {
     }
     
     func processRemoteCommand(with payload: [String: Any]) {
-        guard let contentsquareTracker = contentsquareTracker,
+        guard let contentsquareInstance = contentsquareInstance,
               let command = payload[Contentsquare.commandKey] as? String else {
                 return
         }
@@ -49,7 +49,7 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             switch command {
             case .sendScreenView:
                 guard let screenName = payload[Contentsquare.ScreenView.screenName] as? String else { return }
-                contentsquareTracker.sendScreenView(screenName: screenName)
+                contentsquareInstance.sendScreenView(screenName: screenName)
             case .sendTransaction:
                 var options = [String: Any]()
                 if let transaction = payload[Contentsquare.TransactionProperties.transaction] as? [String: Any] {
@@ -60,20 +60,20 @@ public class ContentsquareRemoteCommand: RemoteCommand {
                 guard let price: Double = options[Contentsquare.TransactionProperties.price] as? Double,
                     let currency: String = options[Contentsquare.TransactionProperties.currency] as? String else { return }
                 let transactionId: String? = options[Contentsquare.TransactionProperties.transactionId] as? String
-                contentsquareTracker.sendTransaction(price: price, currency: currency, transactionId: transactionId)
+                contentsquareInstance.sendTransaction(price: price, currency: currency, transactionId: transactionId)
             case .sendDynamicVar:
                 guard let dynamicVar = payload[Contentsquare.DynamicVar.dynamicVar] as? [String: Any] else { return }
-                contentsquareTracker.sendDynamicVar(dynamicVar: dynamicVar)
+                contentsquareInstance.sendDynamicVar(dynamicVar: dynamicVar)
             case .stopTracking:
-                contentsquareTracker.stopTracking()
+                contentsquareInstance.stopTracking()
             case .resumeTracking:
-                contentsquareTracker.resumeTracking()
+                contentsquareInstance.resumeTracking()
             case .forgetMe:
-                contentsquareTracker.forgetMe()
+                contentsquareInstance.forgetMe()
             case .optIn:
-                contentsquareTracker.optIn()
+                contentsquareInstance.optIn()
             case .optOut:
-                contentsquareTracker.optOut()
+                contentsquareInstance.optOut()
             default: break
             }
         }

@@ -1,5 +1,5 @@
 //
-//  ContentsquareTracker.swift
+//  ContentsquareInstance.swift
 //  TealiumContentsquare
 //
 //  Created by Jonathan Wong on 3/6/20.
@@ -9,7 +9,7 @@
 import Foundation
 import ContentsquareModule
 
-public protocol ContentsquareTrackable {
+public protocol ContentsquareCommand {
     func sendScreenView(screenName: String)
     func sendTransaction(price: Double, currency: String, transactionId: String?)
     func sendDynamicVar(dynamicVar: [String: Any])
@@ -20,7 +20,7 @@ public protocol ContentsquareTrackable {
     func optOut()
 }
 
-public class ContentsquareTracker: ContentsquareTrackable {
+public class ContentsquareInstance: ContentsquareCommand {
     
     public init() {}
     

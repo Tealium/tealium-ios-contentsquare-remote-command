@@ -3,7 +3,7 @@
 //  BrazeRemoteCommand
 //
 //  Created by Jonathan Wong on 5/29/19.
-//  Copyright © 2019 Jonathan Wong. All rights reserved.
+//  Copyright © 2019 Tealium. All rights reserved.
 //
 
 import Foundation

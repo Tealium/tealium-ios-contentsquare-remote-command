@@ -9,7 +9,7 @@
 import XCTest
 @testable import TealiumContentsquare
 
-class MockContentsquareTracker: ContentsquareTrackable {
+class MockContentsquareInstance: ContentsquareCommand {
 
     var sendScreenViewCallCount = 0
     var sendTransactionCallCount = 0
