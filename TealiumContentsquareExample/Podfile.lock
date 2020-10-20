@@ -1,25 +1,33 @@
 PODS:
   - CS_iOS_SDK (3.2.1)
-  - tealium-swift (2.1.0):
-    - tealium-swift/TealiumFull (= 2.1.0)
-  - tealium-swift/TealiumFull (2.1.0)
+  - tealium-swift/Core (2.1.0)
+  - tealium-swift/RemoteCommands (2.1.0):
+    - tealium-swift/Core
+  - tealium-swift/TagManagement (2.1.0):
+    - tealium-swift/Core
+  - TealiumContentsquare (2.0.0):
+    - CS_iOS_SDK
+    - tealium-swift/Core (~> 2.1)
+    - tealium-swift/RemoteCommands (~> 2.1)
+    - tealium-swift/TagManagement (~> 2.1)
 
 DEPENDENCIES:
-  - CS_iOS_SDK
-  - tealium-swift (from `/Users/christina/Projects/work-repos/github/tealium-swift-builder`)
+  - TealiumContentsquare (from `../`)
 
 SPEC REPOS:
   trunk:
     - CS_iOS_SDK
+    - tealium-swift
 
 EXTERNAL SOURCES:
-  tealium-swift:
-    :path: "/Users/christina/Projects/work-repos/github/tealium-swift-builder"
+  TealiumContentsquare:
+    :path: "../"
 
 SPEC CHECKSUMS:
   CS_iOS_SDK: d4ab9a1fd87e8254ce888724cb56256362fe0c1a
   tealium-swift: a670c2c6f3e7e5d775d9507387e8858a8541e526
+  TealiumContentsquare: 3177c797b0a8b001e1b211122b7728db05a8b481
 
-PODFILE CHECKSUM: 2fa462dfa913d72a41a3175b6b744204150c8736
+PODFILE CHECKSUM: 484e8e2d3515241393ce3d9ae9ded5e340792e49
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
