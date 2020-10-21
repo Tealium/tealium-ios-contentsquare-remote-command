@@ -21,7 +21,7 @@ public class ContentsquareRemoteCommand: RemoteCommand {
     
     public init(contentsquareInstance: ContentsquareCommand = ContentsquareInstance(), type: RemoteCommandType = .webview) {
         self.contentsquareInstance = contentsquareInstance
-        weak var selfWorkaround: ContentsquareRemoteCommand?
+        weak var weakSelf: ContentsquareRemoteCommand?
         super.init(commandId: Contentsquare.commandId,
                    description: Contentsquare.description,
             type: type,
@@ -29,9 +29,9 @@ public class ContentsquareRemoteCommand: RemoteCommand {
                 guard let payload = response.payload else {
                     return
                 }
-                selfWorkaround?.processRemoteCommand(with: payload)
+                weakSelf?.processRemoteCommand(with: payload)
             })
-        selfWorkaround = self
+        weakSelf = self
     }
     
     func processRemoteCommand(with payload: [String: Any]) {
