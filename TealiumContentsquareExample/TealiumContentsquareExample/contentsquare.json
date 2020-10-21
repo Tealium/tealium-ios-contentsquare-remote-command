@@ -1,0 +1,21 @@
+{
+  "config": {},
+  "mappings": {
+    "screen": "screen_name",
+    "dynamic_var": "dynamic_var",
+    "price": "purchase.price",
+    "currency": "purchase.currency",
+    "transaction_id": "purchase.transaction_id"
+  },
+  "commands": {
+    "screen_title": "sendscreenview",
+    "dynamic_var": "senddynamicvar",
+    "transaction": "sendtransaction",
+    "stop_tracking": "stoptracking",
+    "resume_tracking": "resumetracking",
+    "forget_me": "forgetme",
+    "opt_in": "optin",
+    "opt_out": "optout"
+  }
+}
+

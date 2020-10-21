@@ -1,15 +1,26 @@
 //
-//  ContentsquareTracker.swift
+//  ContentsquareInstance.swift
 //  TealiumContentsquare
 //
 //  Created by Jonathan Wong on 3/6/20.
-//  Copyright © 2020 Jonathan Wong. All rights reserved.
+//  Copyright © 2020 Tealium. All rights reserved.
 //
 
 import Foundation
 import ContentsquareModule
 
-public class ContentsquareTracker: ContentsquareTrackable {
+public protocol ContentsquareCommand {
+    func sendScreenView(screenName: String)
+    func sendTransaction(price: Double, currency: String, transactionId: String?)
+    func sendDynamicVar(dynamicVar: [String: Any])
+    func stopTracking()
+    func resumeTracking()
+    func forgetMe()
+    func optIn()
+    func optOut()
+}
+
+public class ContentsquareInstance: ContentsquareCommand {
     
     public init() {}
     
@@ -29,19 +40,11 @@ public class ContentsquareTracker: ContentsquareTrackable {
     public func sendDynamicVar(dynamicVar: [String: Any]) {
         dynamicVar.forEach { key, value in
             if let value = value as? String {
-                do {
-                    let dynamicVar = try DynamicVar(key: key, value: value)
-                    Contentsquare.send(dynamicVar: dynamicVar)
-                } catch {
-                    print("Error with dynamic variable key: \(key), value: \(value), error: \(error)")
-                }
+                let dynamicVar = DynamicVar(key: key, value: value)
+                Contentsquare.send(dynamicVar: dynamicVar)
             } else if let value = value as? UInt32 {
-                do {
-                    let dynamicVar = try DynamicVar(key: key, value: value)
-                    Contentsquare.send(dynamicVar: dynamicVar)
-                } catch {
-                    print("Error with dynamic variable key: \(key), value: \(value), error: \(error)")
-                }
+                let dynamicVar = DynamicVar(key: key, value: value)
+                Contentsquare.send(dynamicVar: dynamicVar)
             } else {
                 print("Incorrect format of value: \(value). Value should be String or UInt32.")
             }

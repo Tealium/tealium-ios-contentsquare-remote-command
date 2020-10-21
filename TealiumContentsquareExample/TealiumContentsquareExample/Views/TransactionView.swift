@@ -3,7 +3,7 @@
 //  TealiumContentsquareExample
 //
 //  Created by Jonathan Wong on 3/9/20.
-//  Copyright © 2020 Jonathan Wong. All rights reserved.
+//  Copyright © 2020 Tealium. All rights reserved.
 //
 
 import SwiftUI
@@ -37,16 +37,12 @@ struct TransactionView: View {
 extension TransactionView {
     func trackTransactionView(price: Double, id: String?) {
         guard let id = id else {
-            TealiumHelper.track(title: "transaction", data:
-            ["transaction": ["price": price,
-                             "currency": "EUR"
-                             ]])
+            TealiumHelper.track(title: "transaction",
+                                data: ["price": price, "currency": "EUR"])
             return
         }
-        TealiumHelper.track(title: "transaction", data:
-        ["transaction": ["price": price,
-                         "currency": 1,
-                         "transaction_id": id]])
+        TealiumHelper.track(title: "transaction",
+                            data: ["price": price,"currency": "USD","transaction_id": id])
     }
 }
 
