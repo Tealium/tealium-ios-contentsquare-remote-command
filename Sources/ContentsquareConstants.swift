@@ -6,39 +6,38 @@
 //  Copyright © 2020 Tealium. All rights reserved.
 //
 
-extension ContentsquareRemoteCommand {
-    enum Contentsquare {
-        
-        static let commandId = "contentsquare"
-        static let description = "Contentsquare Remote Command"
-        static let commandKey = "command_name"
-        static let separator: Character = ","
-        
-        enum Commands: String {
-            case sendScreenView = "sendscreenview"
-            case sendTransaction = "sendtransaction"
-            case sendDynamicVar = "senddynamicvar"
-            case stopTracking = "stoptracking"
-            case resumeTracking = "resumetracking"
-            case forgetMe = "forgetme"
-            case optIn = "optin"
-            case optOut = "optout"
-        }
-        
-        enum ScreenView {
-            static let screenName = "screen_name"
-        }
-        
-        enum TransactionProperties {
-            static let purchase = "purchase"
-            static let transaction = "transaction"
-            static let price = "price" // required
-            static let currency = "currency" // required
-            static let transactionId = "transaction_id" // optional
-        }
-        
-        enum DynamicVar {
-            static let dynamicVar = "dynamic_var"
-        }
+public enum ContentsquareConstants {
+    
+    static let commandId = "contentsquare"
+    static let description = "Contentsquare Remote Command"
+    static let commandKey = "command_name"
+    static let separator: Character = ","
+    static let version = "2.1.0"
+    
+    enum Commands: String {
+        case sendScreenView = "sendscreenview"
+        case sendTransaction = "sendtransaction"
+        case sendDynamicVar = "senddynamicvar"
+        case stopTracking = "stoptracking"
+        case resumeTracking = "resumetracking"
+        case forgetMe = "forgetme"
+        case optIn = "optin"
+        case optOut = "optout"
+    }
+    
+    enum ScreenView {
+        static let screenName = "screen_name"
+    }
+    
+    enum TransactionProperties {
+        static let purchase = "purchase"
+        static let transaction = "transaction"
+        static let price = "price" // required
+        static let currency = "currency" // required
+        static let transactionId = "transaction_id" // optional
+    }
+    
+    enum DynamicVar {
+        static let dynamicVar = "dynamic_var"
     }
 }
