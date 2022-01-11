@@ -1,4 +1,4 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.5
 import PackageDescription
 
 let package = Package(
@@ -10,8 +10,8 @@ let package = Package(
         .library(name: "TealiumContentsquare", targets: ["TealiumContentsquare"])
     ],
     dependencies: [
-        .package(url: "https://github.com/tealium/tealium-swift", from: "2.5.0"),
-        .package(url: "https://github.com/ContentSquare/CS_iOS_SDK", from: "4.10.0")
+        .package(url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.5.0")),
+        .package(url: "https://github.com/ContentSquare/CS_iOS_SDK", .upToNextMajor(from: "4.10.0"))
     ],
     targets: [
         .target(
@@ -22,11 +22,6 @@ let package = Package(
                  .product(name: "ContentsquareModule", package: "CS_iOS_SDK")
             ],
             path: "./Sources",
-            exclude: ["Support"]),
-        .testTarget(
-            name: "TealiumContentsquareTests",
-            dependencies: ["TealiumContentsquare"],
-            path: "./Tests",
             exclude: ["Support"])
     ]
 )
