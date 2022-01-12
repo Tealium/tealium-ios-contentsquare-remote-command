@@ -11,7 +11,6 @@
 		15430458277C6820004FF14A /* SwiftProtobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430454277C6820004FF14A /* SwiftProtobuf.xcframework */; };
 		15430459277C6820004FF14A /* TealiumCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430455277C6820004FF14A /* TealiumCore.xcframework */; };
 		1543045A277C6820004FF14A /* TealiumRemoteCommands.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */; };
-		15E8E11D277CADCB00F50872 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15E8E11C277CADCB00F50872 /* Info.plist */; };
 		4B4B6E73241B28920084E720 /* ContentsquareInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B6E72241B28920084E720 /* ContentsquareInstanceTests.swift */; };
 		4BEB130F241046820060D075 /* TealiumContentsquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEB1305241046820060D075 /* TealiumContentsquare.framework */; platformFilter = ios; };
 		4BEB1314241046820060D075 /* MockContentsquareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB1313241046820060D075 /* MockContentsquareInstance.swift */; };
@@ -252,7 +251,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15E8E11D277CADCB00F50872 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,7 +477,7 @@
 				DEVELOPMENT_TEAM = XC939GDC9P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = Tests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -502,7 +500,7 @@
 				DEVELOPMENT_TEAM = XC939GDC9P;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = Tests/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
