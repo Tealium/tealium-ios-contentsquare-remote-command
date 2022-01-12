@@ -36,7 +36,6 @@ Pod::Spec.new do |s|
     # ――― Dependencies ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.ios.dependency 'tealium-swift/Core', '~> 2.6'
     s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.6'
-    s.ios.dependency 'tealium-swift/TagManagement', '~> 2.6'
-    s.ios.dependency 'CS_iOS_SDK', '~> 3.2'
+    s.ios.dependency 'CS_iOS_SDK', '~> 4.10'
 
 end

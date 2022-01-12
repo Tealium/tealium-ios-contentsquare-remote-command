@@ -36,7 +36,7 @@ class TealiumHelper {
         config.batchingEnabled = false
         config.remoteAPIEnabled = true
         config.logLevel = .info
-        config.dispatchers = [Dispatchers.TagManagement, Dispatchers.RemoteCommands]
+        config.dispatchers = [ Dispatchers.RemoteCommands]
         
         config.addRemoteCommand(contentsquareRemoteCommand)
         
