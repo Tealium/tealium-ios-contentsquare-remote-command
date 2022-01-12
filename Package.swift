@@ -10,7 +10,7 @@ let package = Package(
         .library(name: "TealiumContentsquare", targets: ["TealiumContentsquare"])
     ],
     dependencies: [
-        .package(url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.5.0")),
+        .package(url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.6.0")),
         .package(url: "https://github.com/ContentSquare/CS_iOS_SDK", .upToNextMajor(from: "4.10.0"))
     ],
     targets: [

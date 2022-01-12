@@ -17,7 +17,11 @@ import TealiumRemoteCommands
 public class ContentsquareRemoteCommand: RemoteCommand {
     
     var contentsquareInstance: ContentsquareCommand?
-    
+
+    override public var version: String? {
+        return ContentsquareConstants.version
+    }
+
     public init(contentsquareInstance: ContentsquareCommand = ContentsquareInstance(), type: RemoteCommandType = .webview) {
         self.contentsquareInstance = contentsquareInstance
         weak var weakSelf: ContentsquareRemoteCommand?

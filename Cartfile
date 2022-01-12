@@ -1,2 +1,2 @@
-github "tealium/tealium-swift" ~> 2.5
+github "tealium/tealium-swift" ~> 2.6
 github "ContentSquare/CS_iOS_SDK" ~> 4.10
