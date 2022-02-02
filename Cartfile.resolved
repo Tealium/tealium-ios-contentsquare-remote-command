@@ -1,0 +1,3 @@
+github "ContentSquare/CS_iOS_SDK" "v4.10.0"
+github "apple/swift-protobuf" "1.18.0"
+github "tealium/tealium-swift" "2.5.1"

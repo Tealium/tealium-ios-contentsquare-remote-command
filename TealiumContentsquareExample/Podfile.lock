@@ -1,15 +1,14 @@
 PODS:
-  - CS_iOS_SDK (3.2.1)
-  - tealium-swift/Core (2.1.0)
-  - tealium-swift/RemoteCommands (2.1.0):
+  - CS_iOS_SDK (4.10.0):
+    - SwiftProtobuf (~> 1.0)
+  - SwiftProtobuf (1.18.0)
+  - tealium-swift/Core (2.5.1)
+  - tealium-swift/RemoteCommands (2.5.1):
     - tealium-swift/Core
-  - tealium-swift/TagManagement (2.1.0):
-    - tealium-swift/Core
-  - TealiumContentsquare (2.0.0):
-    - CS_iOS_SDK
-    - tealium-swift/Core (~> 2.1)
-    - tealium-swift/RemoteCommands (~> 2.1)
-    - tealium-swift/TagManagement (~> 2.1)
+  - TealiumContentsquare (2.1.0):
+    - CS_iOS_SDK (~> 4.10)
+    - tealium-swift/Core (~> 2.5)
+    - tealium-swift/RemoteCommands (~> 2.5)
 
 DEPENDENCIES:
   - TealiumContentsquare (from `../`)
@@ -17,6 +16,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - CS_iOS_SDK
+    - SwiftProtobuf
     - tealium-swift
 
 EXTERNAL SOURCES:
@@ -24,10 +24,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CS_iOS_SDK: d4ab9a1fd87e8254ce888724cb56256362fe0c1a
-  tealium-swift: a670c2c6f3e7e5d775d9507387e8858a8541e526
-  TealiumContentsquare: 25672334d89d7201f9aee4825c5304c475ae30e9
+  CS_iOS_SDK: 94867e89ac99283d768fa545cd32e6320028553c
+  SwiftProtobuf: c3c12645230d9b09c72267e0de89468c5543bd86
+  tealium-swift: a7c0f2b6bff641abb1818efbcf22598c99af0517
+  TealiumContentsquare: a0381440a8019241c10ebd0648def07a78a29d16
 
 PODFILE CHECKSUM: 484e8e2d3515241393ce3d9ae9ded5e340792e49
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

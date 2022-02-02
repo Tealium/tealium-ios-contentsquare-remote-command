@@ -11,19 +11,22 @@ import Foundation
 import TealiumSwift
 #else
 import TealiumCore
-import TealiumTagManagement
 import TealiumRemoteCommands
 #endif
 
 public class ContentsquareRemoteCommand: RemoteCommand {
     
     var contentsquareInstance: ContentsquareCommand?
-    
+
+    override public var version: String? {
+        return ContentsquareConstants.version
+    }
+
     public init(contentsquareInstance: ContentsquareCommand = ContentsquareInstance(), type: RemoteCommandType = .webview) {
         self.contentsquareInstance = contentsquareInstance
         weak var weakSelf: ContentsquareRemoteCommand?
-        super.init(commandId: Contentsquare.commandId,
-                   description: Contentsquare.description,
+        super.init(commandId: ContentsquareConstants.commandId,
+                   description: ContentsquareConstants.description,
             type: type,
             completion: { response in
                 guard let payload = response.payload else {
@@ -36,33 +39,33 @@ public class ContentsquareRemoteCommand: RemoteCommand {
     
     func processRemoteCommand(with payload: [String: Any]) {
         guard let contentsquareInstance = contentsquareInstance,
-              let command = payload[Contentsquare.commandKey] as? String else {
+              let command = payload[ContentsquareConstants.commandKey] as? String else {
                 return
         }
-        let commands = command.split(separator: Contentsquare.separator)
+        let commands = command.split(separator: ContentsquareConstants.separator)
         let contentsquareCommands = commands.map { command in
             return command.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         }
 
         contentsquareCommands.forEach {
-            let command = Contentsquare.Commands(rawValue: $0.lowercased())
+            let command = ContentsquareConstants.Commands(rawValue: $0.lowercased())
             switch command {
             case .sendScreenView:
-                guard let screenName = payload[Contentsquare.ScreenView.screenName] as? String else { return }
+                guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String else { return }
                 contentsquareInstance.sendScreenView(screenName: screenName)
             case .sendTransaction:
                 var options = [String: Any]()
-                if let transaction = payload[Contentsquare.TransactionProperties.transaction] as? [String: Any] {
+                if let transaction = payload[ContentsquareConstants.TransactionProperties.transaction] as? [String: Any] {
                     options = transaction
-                } else if let purchase = payload[Contentsquare.TransactionProperties.purchase] as? [String: Any] {
+                } else if let purchase = payload[ContentsquareConstants.TransactionProperties.purchase] as? [String: Any] {
                     options = purchase
                 }
-                guard let price: Double = options[Contentsquare.TransactionProperties.price] as? Double,
-                    let currency: String = options[Contentsquare.TransactionProperties.currency] as? String else { return }
-                let transactionId: String? = options[Contentsquare.TransactionProperties.transactionId] as? String
+                guard let price: Double = options[ContentsquareConstants.TransactionProperties.price] as? Double,
+                    let currency: String = options[ContentsquareConstants.TransactionProperties.currency] as? String else { return }
+                let transactionId: String? = options[ContentsquareConstants.TransactionProperties.transactionId] as? String
                 contentsquareInstance.sendTransaction(price: price, currency: currency, transactionId: transactionId)
             case .sendDynamicVar:
-                guard let dynamicVar = payload[Contentsquare.DynamicVar.dynamicVar] as? [String: Any] else { return }
+                guard let dynamicVar = payload[ContentsquareConstants.DynamicVar.dynamicVar] as? [String: Any] else { return }
                 contentsquareInstance.sendDynamicVar(dynamicVar: dynamicVar)
             case .stopTracking:
                 contentsquareInstance.stopTracking()
