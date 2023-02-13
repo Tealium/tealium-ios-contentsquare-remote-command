@@ -12,7 +12,7 @@ public enum ContentsquareConstants {
     static let description = "Contentsquare Remote Command"
     static let commandKey = "command_name"
     static let separator: Character = ","
-    static let version = "2.1.1"
+    static let version = "2.2.0"
     
     enum Commands: String {
         case sendScreenView = "sendscreenview"
