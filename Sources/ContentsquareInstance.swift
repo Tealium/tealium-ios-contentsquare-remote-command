@@ -63,6 +63,12 @@ public class ContentsquareInstance: ContentsquareCommand {
                 print("CustomVar index not convertible: \(json)")
                 return nil
             }
+            
+            guard index > 0 && index <= 20 else {
+                print("CustomVar index out of range (1-20): \(index)")
+                return nil
+            }
+            
             guard let name = json["name"] as? String, !name.isEmpty,
                   let value = json["value"] as? String, !value.isEmpty else {
                 print("CustomVar missing name/value: \(json)")
