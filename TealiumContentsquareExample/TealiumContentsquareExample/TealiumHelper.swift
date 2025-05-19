@@ -1,6 +1,6 @@
 //
 //  TealiumHelper.swift
-//  BrazeRemoteCommand
+//  ContentsquareRemoteCommand
 //
 //  Created by Jonathan Wong on 5/29/19.
 //  Copyright © 2019 Tealium. All rights reserved.

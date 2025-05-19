@@ -13,6 +13,8 @@ public protocol ContentsquareCommand {
     func sendScreenView(screenName: String)
     func sendTransaction(price: Double, currency: String, transactionId: String?)
     func sendDynamicVar(dynamicVar: [String: Any])
+    func sendUserIdentifier(userId: String)
+    func sendCustomVars(screenName: String, customVars: [[String: Any]])
     func stopTracking()
     func resumeTracking()
     func forgetMe()
@@ -48,6 +50,30 @@ public class ContentsquareInstance: ContentsquareCommand {
             } else {
                 print("Incorrect format of value: \(value). Value should be String or UInt32.")
             }
+        }
+    }
+    
+    public func sendUserIdentifier(userId: String) {
+        Contentsquare.sendUserIdentifier(userId)
+    }
+    
+    public func sendCustomVars(screenName: String, customVars: [[String: Any]]) {
+        let csCustomVars = customVars.compactMap { json -> CustomVar? in
+            guard let index = json["index"] as? UInt32,
+                  let name = json["name"] as? String,
+                  let value = json["value"] as? String,
+                  index >= 0, !name.isEmpty, !value.isEmpty else {
+                print("Invalid custom var: \(json)")
+                return nil
+            }
+            
+            return CustomVar(index: index, name: name, value: value)
+        }
+        
+        if !csCustomVars.isEmpty {
+            Contentsquare.send(screenViewWithName: screenName, cvars: csCustomVars)
+        } else {
+            print("No valid custom vars to send")
         }
     }
     

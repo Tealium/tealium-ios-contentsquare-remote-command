@@ -18,6 +18,8 @@ public enum ContentsquareConstants {
         case sendScreenView = "sendscreenview"
         case sendTransaction = "sendtransaction"
         case sendDynamicVar = "senddynamicvar"
+        case sendUserIdentifier = "senduseridentifier"
+        case sendCustomVars = "sendcustomvars"
         case stopTracking = "stoptracking"
         case resumeTracking = "resumetracking"
         case forgetMe = "forgetme"
@@ -39,5 +41,16 @@ public enum ContentsquareConstants {
     
     enum DynamicVar {
         static let dynamicVar = "dynamic_var"
+    }
+    
+    enum UserIdentifier {
+        static let userIdentifier = "user_identifier"
+    }
+    
+    enum CustomVars {
+        static let customVars = "custom_vars"
+        static let index = "index"
+        static let name = "name"
+        static let value = "value"
     }
 }

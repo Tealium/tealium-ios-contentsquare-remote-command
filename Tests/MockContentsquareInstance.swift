@@ -11,45 +11,57 @@ import XCTest
 
 class MockContentsquareInstance: ContentsquareCommand {
 
-    var sendScreenViewCallCount = 0
-    var sendTransactionCallCount = 0
-    var sendDynamicVarCallCount = 0
-    var stopTrackingCallCount = 0
-    var resumeTrackingCallCount = 0
-    var forgetMeCallCount = 0
-    var optInCallCount = 0
-    var optOutCallCount = 0
+    // Tracking last parameters
+    var lastScreenName: String?
+    var lastTransactionInfo: (price: Double, currency: String, transactionId: String?)?
+    var lastDynamicVar: [String: Any]?
+    var lastUserId: String?
+    var lastCustomVarsInfo: (screenName: String, customVars: [[String: Any]])?
+    
+    // Tracking calls
+    var didStopTracking = false
+    var didResumeTracking = false
+    var didForgetMe = false
+    var didOptIn = false
+    var didOptOut = false
     
     func sendScreenView(screenName: String) {
-        sendScreenViewCallCount = 1
+        lastScreenName = screenName
     }
     
     func sendTransaction(price: Double, currency: String, transactionId: String?) {
-        sendTransactionCallCount = 1
+        lastTransactionInfo = (price: price, currency: currency, transactionId: transactionId)
     }
 
     func sendDynamicVar(dynamicVar: [String: Any]) {
-        sendDynamicVarCallCount = 1
+        lastDynamicVar = dynamicVar
+    }
+    
+    func sendUserIdentifier(userId: String) {
+        lastUserId = userId
+    }
+    
+    func sendCustomVars(screenName: String, customVars: [[String: Any]]) {
+        lastCustomVarsInfo = (screenName: screenName, customVars: customVars)
     }
     
     func stopTracking() {
-        stopTrackingCallCount = 1
+        didStopTracking = true
     }
     
     func resumeTracking() {
-        resumeTrackingCallCount = 1
+        didResumeTracking = true
     }
     
     func forgetMe() {
-        forgetMeCallCount = 1
+        didForgetMe = true
     }
     
     func optIn() {
-        optInCallCount = 1
+        didOptIn = true
     }
     
     func optOut() {
-        optOutCallCount = 1
+        didOptOut = true
     }
-    
 }

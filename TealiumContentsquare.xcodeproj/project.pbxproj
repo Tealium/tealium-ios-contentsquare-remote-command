@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		15430457277C6820004FF14A /* ContentsquareModule.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430453277C6820004FF14A /* ContentsquareModule.xcframework */; };
-		15430458277C6820004FF14A /* SwiftProtobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430454277C6820004FF14A /* SwiftProtobuf.xcframework */; };
 		15430459277C6820004FF14A /* TealiumCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430455277C6820004FF14A /* TealiumCore.xcframework */; };
 		1543045A277C6820004FF14A /* TealiumRemoteCommands.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */; };
 		4B4B6E73241B28920084E720 /* ContentsquareInstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4B6E72241B28920084E720 /* ContentsquareInstanceTests.swift */; };
 		4BEB130F241046820060D075 /* TealiumContentsquare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BEB1305241046820060D075 /* TealiumContentsquare.framework */; platformFilter = ios; };
 		4BEB1314241046820060D075 /* MockContentsquareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BEB1313241046820060D075 /* MockContentsquareInstance.swift */; };
 		4BEB1316241046820060D075 /* TealiumContentsquare.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BEB1308241046820060D075 /* TealiumContentsquare.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9E6990102DDB423A0005BB8B /* CSSwiftProtobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */; };
+		9E6990112DDB423A0005BB8B /* CSSwiftProtobuf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CFE092162537AF74005E09AB /* ContentsquareConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092142537AF74005E09AB /* ContentsquareConstants.swift */; };
 		CFE092172537AF74005E09AB /* ContentsquareRemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092152537AF74005E09AB /* ContentsquareRemoteCommand.swift */; };
 		CFE0921A2537AFC8005E09AB /* ContentsquareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092192537AFC8005E09AB /* ContentsquareInstance.swift */; };
@@ -31,6 +32,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9E6990122DDB423A0005BB8B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9E6990112DDB423A0005BB8B /* CSSwiftProtobuf.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CFEF6CE42527DD3500902EC6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -43,10 +55,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15430453277C6820004FF14A /* ContentsquareModule.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ContentsquareModule.xcframework; path = Carthage/Build/ContentsquareModule.xcframework; sourceTree = "<group>"; };
+		15430453277C6820004FF14A /* ContentsquareModule.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:68F5DK9B95:CONTENT SQUARE"; lastKnownFileType = wrapper.xcframework; name = ContentsquareModule.xcframework; path = Carthage/Build/ContentsquareModule.xcframework; sourceTree = "<group>"; };
 		15430454277C6820004FF14A /* SwiftProtobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftProtobuf.xcframework; path = Carthage/Build/SwiftProtobuf.xcframework; sourceTree = "<group>"; };
-		15430455277C6820004FF14A /* TealiumCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
-		15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
+		15430455277C6820004FF14A /* TealiumCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
+		15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
 		15E8E116277CADB000F50872 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15E8E11C277CADCB00F50872 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B4B6E72241B28920084E720 /* ContentsquareInstanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsquareInstanceTests.swift; sourceTree = "<group>"; };
@@ -54,6 +66,7 @@
 		4BEB1308241046820060D075 /* TealiumContentsquare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TealiumContentsquare.h; sourceTree = "<group>"; };
 		4BEB130E241046820060D075 /* TealiumContentsquareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TealiumContentsquareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BEB1313241046820060D075 /* MockContentsquareInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockContentsquareInstance.swift; sourceTree = "<group>"; };
+		9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:68F5DK9B95:CONTENT SQUARE"; lastKnownFileType = wrapper.xcframework; name = CSSwiftProtobuf.xcframework; path = Carthage/Build/CSSwiftProtobuf.xcframework; sourceTree = "<group>"; };
 		CFE092142537AF74005E09AB /* ContentsquareConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareConstants.swift; sourceTree = "<group>"; };
 		CFE092152537AF74005E09AB /* ContentsquareRemoteCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareRemoteCommand.swift; sourceTree = "<group>"; };
 		CFE092192537AFC8005E09AB /* ContentsquareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareInstance.swift; sourceTree = "<group>"; };
@@ -66,7 +79,7 @@
 			files = (
 				15430459277C6820004FF14A /* TealiumCore.xcframework in Frameworks */,
 				1543045A277C6820004FF14A /* TealiumRemoteCommands.xcframework in Frameworks */,
-				15430458277C6820004FF14A /* SwiftProtobuf.xcframework in Frameworks */,
+				9E6990102DDB423A0005BB8B /* CSSwiftProtobuf.xcframework in Frameworks */,
 				15430457277C6820004FF14A /* ContentsquareModule.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +114,7 @@
 		4BE614002412FF7700C4B1EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */,
 				15430453277C6820004FF14A /* ContentsquareModule.xcframework */,
 				15430454277C6820004FF14A /* SwiftProtobuf.xcframework */,
 				15430455277C6820004FF14A /* TealiumCore.xcframework */,
@@ -172,6 +186,7 @@
 				4BEB1301241046820060D075 /* Sources */,
 				4BEB1302241046820060D075 /* Frameworks */,
 				4BEB1303241046820060D075 /* Resources */,
+				9E6990122DDB423A0005BB8B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

@@ -67,6 +67,14 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             case .sendDynamicVar:
                 guard let dynamicVar = payload[ContentsquareConstants.DynamicVar.dynamicVar] as? [String: Any] else { return }
                 contentsquareInstance.sendDynamicVar(dynamicVar: dynamicVar)
+            case .sendUserIdentifier:
+                guard let userId = payload[ContentsquareConstants.UserIdentifier.userIdentifier] as? String else { return }
+                contentsquareInstance.sendUserIdentifier(userId: userId)
+            case .sendCustomVars:
+                guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String,
+                      let customVarsArray = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]],
+                      !customVarsArray.isEmpty else { return }
+                contentsquareInstance.sendCustomVars(screenName: screenName, customVars: customVarsArray)
             case .stopTracking:
                 contentsquareInstance.stopTracking()
             case .resumeTracking:

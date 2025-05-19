@@ -5,12 +5,16 @@
     "dynamic_var": "dynamic_var",
     "price": "purchase.price",
     "currency": "purchase.currency",
-    "transaction_id": "purchase.transaction_id"
+    "transaction_id": "purchase.transaction_id",
+    "user_identifier": "user_identifier",
+    "custom_vars": "custom_vars"
   },
   "commands": {
     "screen_title": "sendscreenview",
     "dynamic_var": "senddynamicvar",
     "transaction": "sendtransaction",
+    "user_identifier": "senduseridentifier",
+    "custom_vars": "sendcustomvars",
     "stop_tracking": "stoptracking",
     "resume_tracking": "resumetracking",
     "forget_me": "forgetme",

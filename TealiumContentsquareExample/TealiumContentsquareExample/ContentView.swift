@@ -25,6 +25,14 @@ struct ContentView: View {
                     Image(systemName: "greaterthan.square")
                     Text("Dynamic Vars")
                 }
+                UserIdentifierView().tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("User ID")
+                }
+                CustomVarsView().tabItem {
+                    Image(systemName: "list.bullet.rectangle")
+                    Text("Custom Vars")
+                }
                 MiscellaneousView().tabItem {
                     Image(systemName: "list.bullet")
                     Text("Miscellaneous")
