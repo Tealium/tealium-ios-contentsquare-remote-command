@@ -59,17 +59,18 @@ public class ContentsquareInstance: ContentsquareCommand {
     
     public func sendCustomVars(screenName: String, customVars: [[String: Any]]) {
         let csCustomVars = customVars.compactMap { json -> CustomVar? in
-            guard let index = json["index"] as? UInt32,
-                  let name = json["name"] as? String,
-                  let value = json["value"] as? String,
-                  index >= 0, !name.isEmpty, !value.isEmpty else {
-                print("Invalid custom var: \(json)")
+            guard let index = parseIndex(json["index"]) else {
+                print("CustomVar index not convertible: \(json)")
                 return nil
             }
-            
+            guard let name = json["name"] as? String, !name.isEmpty,
+                  let value = json["value"] as? String, !value.isEmpty else {
+                print("CustomVar missing name/value: \(json)")
+                return nil
+            }
             return CustomVar(index: index, name: name, value: value)
         }
-        
+
         if !csCustomVars.isEmpty {
             Contentsquare.send(screenViewWithName: screenName, cvars: csCustomVars)
         } else {
@@ -95,6 +96,19 @@ public class ContentsquareInstance: ContentsquareCommand {
     
     public func optOut() {
         Contentsquare.optOut()
+    }
+    
+    private func parseIndex(_ value: Any?) -> UInt32? {
+        switch value {
+        case let i as UInt32:
+            return i
+        case let i as Int where i >= 0:
+            return UInt32(i)
+        case let s as String:
+            return UInt32(s.trimmingCharacters(in: .whitespacesAndNewlines))
+        default:
+            return nil
+        }
     }
 }
 

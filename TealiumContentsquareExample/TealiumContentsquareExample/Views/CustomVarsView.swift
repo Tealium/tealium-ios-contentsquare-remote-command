@@ -16,10 +16,10 @@ struct CustomVarItem: Identifiable {
 }
 
 struct CustomVarsView: View {
-    @State private var screenName: String = ""
+    @State private var screenName: String = "Screen Name Test"
     @State private var customVars: [CustomVarItem] = [
-        CustomVarItem(index: 0, name: "category", value: "electronics"),
-        CustomVarItem(index: 1, name: "user_type", value: "premium")
+        CustomVarItem(index: 1, name: "category", value: "electronics"),
+        CustomVarItem(index: 2, name: "user_type", value: "premium")
     ]
     
     var body: some View {
