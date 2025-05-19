@@ -110,7 +110,7 @@ extension ContentsquareInstanceTests {
             "transaction": [
                 "price": price,
                 "currency": currency,
-                "id": transactionId
+                "transaction_id": transactionId
             ]
         ])
  
