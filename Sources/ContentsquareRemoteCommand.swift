@@ -52,7 +52,8 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             switch command {
             case .sendScreenView:
                 guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String else { return }
-                contentsquareInstance.sendScreenView(screenName: screenName)
+                let customVars = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]]
+                contentsquareInstance.sendScreenView(screenName: screenName, customVars: customVars)
             case .sendTransaction:
                 var options = [String: Any]()
                 if let transaction = payload[ContentsquareConstants.TransactionProperties.transaction] as? [String: Any] {
@@ -70,11 +71,6 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             case .sendUserIdentifier:
                 guard let userId = payload[ContentsquareConstants.UserIdentifier.userIdentifier] as? String else { return }
                 contentsquareInstance.sendUserIdentifier(userId: userId)
-            case .sendCustomVars:
-                guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String,
-                      let customVarsArray = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]],
-                      !customVarsArray.isEmpty else { return }
-                contentsquareInstance.sendCustomVars(screenName: screenName, customVars: customVarsArray)
             case .stopTracking:
                 contentsquareInstance.stopTracking()
             case .resumeTracking:

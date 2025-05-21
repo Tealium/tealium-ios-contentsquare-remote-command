@@ -14,7 +14,6 @@
     "dynamic_var": "senddynamicvar",
     "transaction": "sendtransaction",
     "user_identifier": "senduseridentifier",
-    "custom_vars": "sendcustomvars",
     "stop_tracking": "stoptracking",
     "resume_tracking": "resumetracking",
     "forget_me": "forgetme",

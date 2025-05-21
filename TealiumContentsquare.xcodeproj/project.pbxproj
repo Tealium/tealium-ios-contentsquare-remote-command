@@ -33,7 +33,6 @@
 
 /* Begin PBXFileReference section */
 		15430453277C6820004FF14A /* ContentsquareModule.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:68F5DK9B95:CONTENT SQUARE"; lastKnownFileType = wrapper.xcframework; name = ContentsquareModule.xcframework; path = Carthage/Build/ContentsquareModule.xcframework; sourceTree = "<group>"; };
-		15430454277C6820004FF14A /* SwiftProtobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftProtobuf.xcframework; path = Carthage/Build/SwiftProtobuf.xcframework; sourceTree = "<group>"; };
 		15430455277C6820004FF14A /* TealiumCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumCore.xcframework; path = Carthage/Build/TealiumCore.xcframework; sourceTree = "<group>"; };
 		15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:XC939GDC9P:Tealium"; lastKnownFileType = wrapper.xcframework; name = TealiumRemoteCommands.xcframework; path = Carthage/Build/TealiumRemoteCommands.xcframework; sourceTree = "<group>"; };
 		15E8E116277CADB000F50872 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,7 +95,6 @@
 				9E6990182DDB47670005BB8B /* CSCrashReporter.xcframework */,
 				9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */,
 				15430453277C6820004FF14A /* ContentsquareModule.xcframework */,
-				15430454277C6820004FF14A /* SwiftProtobuf.xcframework */,
 				15430455277C6820004FF14A /* TealiumCore.xcframework */,
 				15430456277C6820004FF14A /* TealiumRemoteCommands.xcframework */,
 			);

@@ -7,7 +7,7 @@ PODS:
   - tealium-swift/Core (2.17.0)
   - tealium-swift/RemoteCommands (2.17.0):
     - tealium-swift/Core
-  - TealiumContentsquare (2.3.0):
+  - TealiumContentsquare (2.4.0):
     - CS_iOS_SDK (~> 4.19)
     - tealium-swift/Core (~> 2.12)
     - tealium-swift/RemoteCommands (~> 2.12)
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   CSCrashReporter: bcd93ebf9abaf6e3d8ee4494ab0d630b6750d338
   CSSwiftProtobuf: beced9eecd504dbc1ef9b09e537c06300aed6631
   tealium-swift: 3dc9ce0f27e22ce99ba2eff69e15050ece5e6ca9
-  TealiumContentsquare: bf599ca5d1fdf1f354841ae700ecc1d9e0e68d5e
+  TealiumContentsquare: aa4e71aadc9cc5317216408fcb338bc9c7d56ab6
 
 PODFILE CHECKSUM: 484e8e2d3515241393ce3d9ae9ded5e340792e49
 

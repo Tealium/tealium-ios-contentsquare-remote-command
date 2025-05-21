@@ -19,7 +19,6 @@ public enum ContentsquareConstants {
         case sendTransaction = "sendtransaction"
         case sendDynamicVar = "senddynamicvar"
         case sendUserIdentifier = "senduseridentifier"
-        case sendCustomVars = "sendcustomvars"
         case stopTracking = "stoptracking"
         case resumeTracking = "resumetracking"
         case forgetMe = "forgetme"

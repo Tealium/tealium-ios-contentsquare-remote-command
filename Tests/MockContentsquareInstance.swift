@@ -25,8 +25,11 @@ class MockContentsquareInstance: ContentsquareCommand {
     var didOptIn = false
     var didOptOut = false
     
-    func sendScreenView(screenName: String) {
+    func sendScreenView(screenName: String, customVars: [[String: Any]]? = nil) {
         lastScreenName = screenName
+        if let customVars = customVars, !customVars.isEmpty {
+            lastCustomVarsInfo = (screenName: screenName, customVars: customVars)
+        }
     }
     
     func sendTransaction(price: Double, currency: String, transactionId: String?) {
@@ -39,10 +42,6 @@ class MockContentsquareInstance: ContentsquareCommand {
     
     func sendUserIdentifier(userId: String) {
         lastUserId = userId
-    }
-    
-    func sendCustomVars(screenName: String, customVars: [[String: Any]]) {
-        lastCustomVarsInfo = (screenName: screenName, customVars: customVars)
     }
     
     func stopTracking() {
