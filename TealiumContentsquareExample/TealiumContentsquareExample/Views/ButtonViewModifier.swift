@@ -16,12 +16,3 @@ struct ButtonViewModifier: ViewModifier {
         .cornerRadius(40)
     }
 }
-
-extension View {
-    func bordered() -> some View {
-        ModifiedContent(
-            content: self,
-            modifier: ButtonViewModifier())
-    }
-}
-
