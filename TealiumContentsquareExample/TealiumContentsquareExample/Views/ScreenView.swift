@@ -84,15 +84,14 @@ extension ScreenView {
         var data: [String: Any] = ["screen": screenName]
         
         if showCustomVars {
-            let varsArray: [[String: Any]] = customVars.map { item in
-                return [
-                    "index": item.index,
-                    "name": item.name,
-                    "value": item.value
-                ]
-            }
+            // Send as separate arrays (for JSON mapping)
+            let indexes = customVars.map { $0.index }
+            let names = customVars.map { $0.name }
+            let values = customVars.map { $0.value }
             
-            data["custom_vars"] = varsArray
+            data["custom_var_indexes"] = indexes
+            data["custom_var_names"] = names
+            data["custom_var_values"] = values
         }
         
         TealiumHelper.track(title: "screen_title", data: data)

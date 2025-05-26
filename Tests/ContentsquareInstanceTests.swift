@@ -47,12 +47,15 @@ extension ContentsquareInstanceTests {
 
     func testScreenViewWithCustomVars() {
         let screenName = "product_screen"
-        let customVar1: [String: Any] = ["index": 0, "name": "category", "value": "electronics"]
         
         contentsquareCommand.processRemoteCommand(with: [
             "command_name": "sendscreenview",
             "screen_name": screenName,
-            "custom_vars": [customVar1]
+            "custom_vars": [
+                ContentsquareConstants.CustomVars.indexes: [0],
+                ContentsquareConstants.CustomVars.names: ["category"],
+                ContentsquareConstants.CustomVars.values: ["electronics"]
+            ]
         ])
         
         XCTAssertEqual(screenName, contentsquareInstance.lastScreenName)
@@ -65,13 +68,43 @@ extension ContentsquareInstanceTests {
 
     func testScreenViewWithMultipleCustomVars() {
         let screenName = "product_screen"
-        let customVar1: [String: Any] = ["index": 0, "name": "category", "value": "electronics"]
-        let customVar2: [String: Any] = ["index": 1, "name": "user_type", "value": "premium"]
         
         contentsquareCommand.processRemoteCommand(with: [
             "command_name": "sendscreenview",
             "screen_name": screenName,
-            "custom_vars": [customVar1, customVar2]
+            "custom_vars": [
+                ContentsquareConstants.CustomVars.indexes: [0, 1],
+                ContentsquareConstants.CustomVars.names: ["category", "user_type"],
+                ContentsquareConstants.CustomVars.values: ["electronics", "premium"]
+            ]
+        ])
+        
+        XCTAssertEqual(screenName, contentsquareInstance.lastScreenName)
+        XCTAssertEqual(screenName, contentsquareInstance.lastCustomVarsInfo?.screenName)
+        XCTAssertEqual(2, contentsquareInstance.lastCustomVarsInfo?.customVars.count)
+        
+        // Verify first custom var
+        XCTAssertEqual(0, contentsquareInstance.lastCustomVarsInfo?.customVars[0]["index"] as? Int)
+        XCTAssertEqual("category", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["name"] as? String)
+        XCTAssertEqual("electronics", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["value"] as? String)
+        
+        // Verify second custom var
+        XCTAssertEqual(1, contentsquareInstance.lastCustomVarsInfo?.customVars[1]["index"] as? Int)
+        XCTAssertEqual("user_type", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["name"] as? String)
+        XCTAssertEqual("premium", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["value"] as? String)
+    }
+    
+    func testScreenViewWithCustomVarsFromArrays() {
+        let screenName = "product_screen"
+        
+        contentsquareCommand.processRemoteCommand(with: [
+            "command_name": "sendscreenview",
+            "screen_name": screenName,
+            "custom_vars": [
+                ContentsquareConstants.CustomVars.indexes: [0, 1],
+                ContentsquareConstants.CustomVars.names: ["category", "user_type"],
+                ContentsquareConstants.CustomVars.values: ["electronics", "premium"]
+            ]
         ])
         
         XCTAssertEqual(screenName, contentsquareInstance.lastScreenName)

@@ -52,7 +52,13 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             switch command {
             case .sendScreenView:
                 guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String else { return }
-                let customVars = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]]
+                var customVars: [[String: Any]]?
+                
+                // Convert from object of arrays to array of objects (JSON mapping format)
+                if let customVarsFromJSON = payload[ContentsquareConstants.CustomVars.customVars] as? [String: Any] {
+                    customVars = customVarsFromArrays(customVarsFromJSON)
+                }
+                
                 contentsquareInstance.sendScreenView(screenName: screenName, customVars: customVars)
             case .sendTransaction:
                 var options = [String: Any]()
@@ -84,5 +90,37 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             default: break
             }
         }
+    }
+    
+    func customVarsFromArrays(_ payload: [String: Any]) -> [[String: Any]] {
+        let customVarArrays = payload.normalizeCustomVarArrays()
+        // We assume that all arrays have the same length
+        let count = customVarArrays.first?.value.count ?? 0
+        var result = Array<[String: Any]>(repeating: [:], count: count)
+        
+        for i in 0 ..< count {
+            if let indexes = customVarArrays[ContentsquareConstants.CustomVars.indexes], indexes.count > i {
+                result[i]["index"] = indexes[i]
+            }
+            if let names = customVarArrays[ContentsquareConstants.CustomVars.names], names.count > i {
+                result[i]["name"] = names[i]
+            }
+            if let values = customVarArrays[ContentsquareConstants.CustomVars.values], values.count > i {
+                result[i]["value"] = values[i]
+            }
+        }
+        return result
+    }
+}
+
+extension Dictionary where Key == String, Value == Any {
+    
+    func normalizeCustomVarArrays() -> [String: [Any]] {
+        self.filter { $0.key == ContentsquareConstants.CustomVars.indexes || 
+                     $0.key == ContentsquareConstants.CustomVars.names || 
+                     $0.key == ContentsquareConstants.CustomVars.values }
+            .reduce(into: [String: [Any]]()) { result, dictionary in
+                result[dictionary.key] = dictionary.value as? [Any] ?? [dictionary.value]
+            }
     }
 }
