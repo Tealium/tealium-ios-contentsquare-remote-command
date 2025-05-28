@@ -89,9 +89,9 @@ extension ScreenView {
             let names = customVars.map { $0.name }
             let values = customVars.map { $0.value }
             
-            data["custom_var_indexes"] = indexes
-            data["custom_var_names"] = names
-            data["custom_var_values"] = values
+            data["custom_var_index"] = indexes
+            data["custom_var_name"] = names
+            data["custom_var_value"] = values
         }
         
         TealiumHelper.track(title: "screen_title", data: data)

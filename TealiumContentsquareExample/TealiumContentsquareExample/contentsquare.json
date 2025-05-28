@@ -7,9 +7,9 @@
     "currency": "purchase.currency",
     "transaction_id": "purchase.transaction_id",
     "user_identifier": "user_identifier",
-    "custom_var_indexes": "custom_vars.indexes",
-    "custom_var_names": "custom_vars.names",
-    "custom_var_values": "custom_vars.values"
+    "custom_var_index": "custom_vars.index",
+    "custom_var_name": "custom_vars.name",
+    "custom_var_value": "custom_vars.value"
   },
   "commands": {
     "screen_title": "sendscreenview",

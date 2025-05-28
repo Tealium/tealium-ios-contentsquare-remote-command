@@ -48,8 +48,8 @@ public enum ContentsquareConstants {
     
     enum CustomVars {
         static let customVars = "custom_vars"
-        static let indexes = "indexes"
-        static let names = "names"
-        static let values = "values"
+        static let index = "index"
+        static let name = "name"
+        static let value = "value"
     }
 }

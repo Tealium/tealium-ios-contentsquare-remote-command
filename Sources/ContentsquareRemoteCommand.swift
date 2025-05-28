@@ -53,12 +53,11 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             case .sendScreenView:
                 guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String else { return }
                 var customVars: [[String: Any]]?
-                
-                // Convert from object of arrays to array of objects (JSON mapping format)
-                if let customVarsFromJSON = payload[ContentsquareConstants.CustomVars.customVars] as? [String: Any] {
+                if let customVarsArray = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]] {
+                    customVars = customVarsArray
+                } else if let customVarsFromJSON = payload[ContentsquareConstants.CustomVars.customVars] as? [String: Any] {
                     customVars = customVarsFromArrays(customVarsFromJSON)
                 }
-                
                 contentsquareInstance.sendScreenView(screenName: screenName, customVars: customVars)
             case .sendTransaction:
                 var options = [String: Any]()
@@ -99,14 +98,10 @@ public class ContentsquareRemoteCommand: RemoteCommand {
         var result = Array<[String: Any]>(repeating: [:], count: count)
         
         for i in 0 ..< count {
-            if let indexes = customVarArrays[ContentsquareConstants.CustomVars.indexes], indexes.count > i {
-                result[i]["index"] = indexes[i]
-            }
-            if let names = customVarArrays[ContentsquareConstants.CustomVars.names], names.count > i {
-                result[i]["name"] = names[i]
-            }
-            if let values = customVarArrays[ContentsquareConstants.CustomVars.values], values.count > i {
-                result[i]["value"] = values[i]
+            for key in customVarArrays.keys {
+                if let values = customVarArrays[key], values.count > i {
+                    result[i][key] = values[i]
+                }
             }
         }
         return result
@@ -116,9 +111,9 @@ public class ContentsquareRemoteCommand: RemoteCommand {
 extension Dictionary where Key == String, Value == Any {
     
     func normalizeCustomVarArrays() -> [String: [Any]] {
-        self.filter { $0.key == ContentsquareConstants.CustomVars.indexes || 
-                     $0.key == ContentsquareConstants.CustomVars.names || 
-                     $0.key == ContentsquareConstants.CustomVars.values }
+        self.filter { $0.key == ContentsquareConstants.CustomVars.index || 
+                     $0.key == ContentsquareConstants.CustomVars.name || 
+                     $0.key == ContentsquareConstants.CustomVars.value }
             .reduce(into: [String: [Any]]()) { result, dictionary in
                 result[dictionary.key] = dictionary.value as? [Any] ?? [dictionary.value]
             }

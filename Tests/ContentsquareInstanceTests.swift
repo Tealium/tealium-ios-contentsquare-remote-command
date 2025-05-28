@@ -52,9 +52,9 @@ extension ContentsquareInstanceTests {
             "command_name": "sendscreenview",
             "screen_name": screenName,
             "custom_vars": [
-                ContentsquareConstants.CustomVars.indexes: [0],
-                ContentsquareConstants.CustomVars.names: ["category"],
-                ContentsquareConstants.CustomVars.values: ["electronics"]
+                ContentsquareConstants.CustomVars.index: [0],
+                ContentsquareConstants.CustomVars.name: ["category"],
+                ContentsquareConstants.CustomVars.value: ["electronics"]
             ]
         ])
         
@@ -73,9 +73,9 @@ extension ContentsquareInstanceTests {
             "command_name": "sendscreenview",
             "screen_name": screenName,
             "custom_vars": [
-                ContentsquareConstants.CustomVars.indexes: [0, 1],
-                ContentsquareConstants.CustomVars.names: ["category", "user_type"],
-                ContentsquareConstants.CustomVars.values: ["electronics", "premium"]
+                ContentsquareConstants.CustomVars.index: [0, 1],
+                ContentsquareConstants.CustomVars.name: ["category", "user_type"],
+                ContentsquareConstants.CustomVars.value: ["electronics", "premium"]
             ]
         ])
         
@@ -101,9 +101,9 @@ extension ContentsquareInstanceTests {
             "command_name": "sendscreenview",
             "screen_name": screenName,
             "custom_vars": [
-                ContentsquareConstants.CustomVars.indexes: [0, 1],
-                ContentsquareConstants.CustomVars.names: ["category", "user_type"],
-                ContentsquareConstants.CustomVars.values: ["electronics", "premium"]
+                ContentsquareConstants.CustomVars.index: [1, 2],
+                ContentsquareConstants.CustomVars.name: ["category", "user_type"],
+                ContentsquareConstants.CustomVars.value: ["electronics", "premium"]
             ]
         ])
         
@@ -112,12 +112,39 @@ extension ContentsquareInstanceTests {
         XCTAssertEqual(2, contentsquareInstance.lastCustomVarsInfo?.customVars.count)
         
         // Verify first custom var
-        XCTAssertEqual(0, contentsquareInstance.lastCustomVarsInfo?.customVars[0]["index"] as? Int)
+        XCTAssertEqual(1, contentsquareInstance.lastCustomVarsInfo?.customVars[0]["index"] as? Int)
         XCTAssertEqual("category", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["name"] as? String)
         XCTAssertEqual("electronics", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["value"] as? String)
         
         // Verify second custom var
-        XCTAssertEqual(1, contentsquareInstance.lastCustomVarsInfo?.customVars[1]["index"] as? Int)
+        XCTAssertEqual(2, contentsquareInstance.lastCustomVarsInfo?.customVars[1]["index"] as? Int)
+        XCTAssertEqual("user_type", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["name"] as? String)
+        XCTAssertEqual("premium", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["value"] as? String)
+    }
+    
+    func testScreenViewWithCustomVarsAsArrayOfObjects() {
+        let screenName = "product_screen"
+        
+        contentsquareCommand.processRemoteCommand(with: [
+            "command_name": "sendscreenview",
+            "screen_name": screenName,
+            "custom_vars": [
+                ["index": 1, "name": "category", "value": "electronics"],
+                ["index": 2, "name": "user_type", "value": "premium"]
+            ]
+        ])
+        
+        XCTAssertEqual(screenName, contentsquareInstance.lastScreenName)
+        XCTAssertEqual(screenName, contentsquareInstance.lastCustomVarsInfo?.screenName)
+        XCTAssertEqual(2, contentsquareInstance.lastCustomVarsInfo?.customVars.count)
+        
+        // Verify first custom var
+        XCTAssertEqual(1, contentsquareInstance.lastCustomVarsInfo?.customVars[0]["index"] as? Int)
+        XCTAssertEqual("category", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["name"] as? String)
+        XCTAssertEqual("electronics", contentsquareInstance.lastCustomVarsInfo?.customVars[0]["value"] as? String)
+        
+        // Verify second custom var
+        XCTAssertEqual(2, contentsquareInstance.lastCustomVarsInfo?.customVars[1]["index"] as? Int)
         XCTAssertEqual("user_type", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["name"] as? String)
         XCTAssertEqual("premium", contentsquareInstance.lastCustomVarsInfo?.customVars[1]["value"] as? String)
     }
