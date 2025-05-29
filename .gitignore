@@ -118,4 +118,5 @@ iOSInjectionProject/
 # End of https://www.gitignore.io/api/xcode,swift,carthage,cocoapods
 
 *.xcframework
+*tealium-xcframeworks/*
 *.xcframework.zip
