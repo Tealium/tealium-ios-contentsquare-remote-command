@@ -1,6 +1,6 @@
 //
 //  TealiumHelper.swift
-//  BrazeRemoteCommand
+//  ContentsquareRemoteCommand
 //
 //  Created by Jonathan Wong on 5/29/19.
 //  Copyright © 2019 Tealium. All rights reserved.
@@ -29,7 +29,7 @@ class TealiumHelper {
     static var universalData = [String: Any]()
     
     // JSON Remote Command
-    let contentsquareRemoteCommand = ContentsquareRemoteCommand(type: .remote(url: "https://tags.tiqcdn.com/dle/tealiummobile/demo/contentsquare.json"))
+    let contentsquareRemoteCommand = ContentsquareRemoteCommand(type: .local(file: "contentsquare"))
 
     private init() {
         config.shouldUseRemotePublishSettings = false

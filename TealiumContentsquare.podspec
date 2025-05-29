@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.name         = "TealiumContentsquare"
     s.module_name  = "TealiumContentsquare"
-    s.version      = "2.3.0"
+    s.version      = "2.4.0"
     s.summary      = "Tealium Swift and Contentsquare integration"
     s.description  = <<-DESC
     Tealium's integration with Contentsquare for iOS.

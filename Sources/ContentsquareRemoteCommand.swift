@@ -52,7 +52,13 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             switch command {
             case .sendScreenView:
                 guard let screenName = payload[ContentsquareConstants.ScreenView.screenName] as? String else { return }
-                contentsquareInstance.sendScreenView(screenName: screenName)
+                var customVars: [[String: Any]]?
+                if let customVarsArray = payload[ContentsquareConstants.CustomVars.customVars] as? [[String: Any]] {
+                    customVars = customVarsArray
+                } else if let customVarsFromJSON = payload[ContentsquareConstants.CustomVars.customVars] as? [String: Any] {
+                    customVars = customVarsFromArrays(customVarsFromJSON)
+                }
+                contentsquareInstance.sendScreenView(screenName: screenName, customVars: customVars)
             case .sendTransaction:
                 var options = [String: Any]()
                 if let transaction = payload[ContentsquareConstants.TransactionProperties.transaction] as? [String: Any] {
@@ -67,6 +73,9 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             case .sendDynamicVar:
                 guard let dynamicVar = payload[ContentsquareConstants.DynamicVar.dynamicVar] as? [String: Any] else { return }
                 contentsquareInstance.sendDynamicVar(dynamicVar: dynamicVar)
+            case .sendUserIdentifier:
+                guard let userId = payload[ContentsquareConstants.UserIdentifier.userIdentifier] as? String else { return }
+                contentsquareInstance.sendUserIdentifier(userId: userId)
             case .stopTracking:
                 contentsquareInstance.stopTracking()
             case .resumeTracking:
@@ -80,5 +89,33 @@ public class ContentsquareRemoteCommand: RemoteCommand {
             default: break
             }
         }
+    }
+    
+    func customVarsFromArrays(_ payload: [String: Any]) -> [[String: Any]] {
+        let customVarArrays = payload.normalizeCustomVarArrays()
+        // We assume that all arrays have the same length
+        let count = customVarArrays.first?.value.count ?? 0
+        var result = Array<[String: Any]>(repeating: [:], count: count)
+        
+        for i in 0 ..< count {
+            for key in customVarArrays.keys {
+                if let values = customVarArrays[key], values.count > i {
+                    result[i][key] = values[i]
+                }
+            }
+        }
+        return result
+    }
+}
+
+extension Dictionary where Key == String, Value == Any {
+    
+    func normalizeCustomVarArrays() -> [String: [Any]] {
+        self.filter { $0.key == ContentsquareConstants.CustomVars.index || 
+                     $0.key == ContentsquareConstants.CustomVars.name || 
+                     $0.key == ContentsquareConstants.CustomVars.value }
+            .reduce(into: [String: [Any]]()) { result, dictionary in
+                result[dictionary.key] = dictionary.value as? [Any] ?? [dictionary.value]
+            }
     }
 }

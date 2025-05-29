@@ -10,9 +10,10 @@ import Foundation
 import ContentsquareModule
 
 public protocol ContentsquareCommand {
-    func sendScreenView(screenName: String)
+    func sendScreenView(screenName: String, customVars: [[String: Any]]?)
     func sendTransaction(price: Double, currency: String, transactionId: String?)
     func sendDynamicVar(dynamicVar: [String: Any])
+    func sendUserIdentifier(userId: String)
     func stopTracking()
     func resumeTracking()
     func forgetMe()
@@ -24,8 +25,30 @@ public class ContentsquareInstance: ContentsquareCommand {
     
     public init() {}
     
-    public func sendScreenView(screenName: String) {
-        Contentsquare.send(screenViewWithName: screenName)
+    public func sendScreenView(screenName: String, customVars: [[String: Any]]? = nil) {
+        if let customVars = customVars, !customVars.isEmpty {
+            let csCustomVars = customVars.compactMap { json -> CustomVar? in
+                guard let index = parseIndex(json["index"]) else {
+                    print("CustomVar index not convertible: \(json)")
+                    return nil
+                }
+                                
+                guard let name = json["name"] as? String, 
+                      let value = json["value"] as? String else {
+                    print("CustomVar missing name/value: \(json)")
+                    return nil
+                }
+                return CustomVar(index: index, name: name, value: value)
+            }
+
+            if !csCustomVars.isEmpty {
+                Contentsquare.send(screenViewWithName: screenName, cvars: csCustomVars)
+            } else {
+                Contentsquare.send(screenViewWithName: screenName)
+            }
+        } else {
+            Contentsquare.send(screenViewWithName: screenName)
+        }
     }
     
     public func sendTransaction(price: Double, currency: String, transactionId: String?) {
@@ -42,13 +65,17 @@ public class ContentsquareInstance: ContentsquareCommand {
             if let value = value as? String {
                 let dynamicVar = DynamicVar(key: key, value: value)
                 Contentsquare.send(dynamicVar: dynamicVar)
-            } else if let value = value as? UInt32 {
+            } else if let value = parseIndex(value) {  
                 let dynamicVar = DynamicVar(key: key, value: value)
                 Contentsquare.send(dynamicVar: dynamicVar)
             } else {
                 print("Incorrect format of value: \(value). Value should be String or UInt32.")
             }
         }
+    }
+    
+    public func sendUserIdentifier(userId: String) {
+        Contentsquare.sendUserIdentifier(userId)
     }
     
     public func stopTracking() {
@@ -69,6 +96,17 @@ public class ContentsquareInstance: ContentsquareCommand {
     
     public func optOut() {
         Contentsquare.optOut()
+    }
+    
+    private func parseIndex(_ value: Any?) -> UInt32? {
+        switch value {
+        case let i as any BinaryInteger:
+            return UInt32(exactly: i)
+        case let s as String:
+            return UInt32(s.trimmingCharacters(in: .whitespacesAndNewlines))
+        default:
+            return nil
+        }
     }
 }
 
