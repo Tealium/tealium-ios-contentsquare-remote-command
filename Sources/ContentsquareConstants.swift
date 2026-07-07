@@ -21,7 +21,6 @@ public enum ContentsquareConstants {
         case sendUserIdentifier = "senduseridentifier"
         case stopTracking = "stoptracking"
         case resumeTracking = "resumetracking"
-        case forgetMe = "forgetme"
         case optIn = "optin"
         case optOut = "optout"
     }
