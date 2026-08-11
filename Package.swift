@@ -4,14 +4,14 @@ import PackageDescription
 let package = Package(
     name: "TealiumContentsquare",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v13)
     ],
     products: [
         .library(name: "TealiumContentsquare", targets: ["TealiumContentsquare"])
     ],
     dependencies: [
         .package(url: "https://github.com/tealium/tealium-swift", .upToNextMajor(from: "2.12.0")),
-        .package(url: "https://github.com/ContentSquare/CS_iOS_SDK", .upToNextMajor(from: "4.19.0"))
+        .package(url: "https://github.com/ContentSquare/CS_iOS_SDK", .upToNextMajor(from: "4.52.1"))
     ],
     targets: [
         .target(

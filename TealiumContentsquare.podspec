@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.name         = "TealiumContentsquare"
     s.module_name  = "TealiumContentsquare"
-    s.version      = "2.4.0"
+    s.version      = "3.0.0"
     s.summary      = "Tealium Swift and Contentsquare integration"
     s.description  = <<-DESC
     Tealium's integration with Contentsquare for iOS.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
     # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.swift_version = "5.1"
-    s.platform     = :ios, "12.0"    
+    s.platform     = :ios, "13.0"    
 
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.source       = { :git => "https://github.com/Tealium/tealium-ios-contentsquare-remote-command.git", :tag => "#{s.version}" }
@@ -32,6 +32,6 @@ Pod::Spec.new do |s|
     # ――― Dependencies ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.ios.dependency 'tealium-swift/Core', '~> 2.12'
     s.ios.dependency 'tealium-swift/RemoteCommands', '~> 2.12'
-    s.ios.dependency 'CS_iOS_SDK', '~> 4.19'
+    s.ios.dependency 'CS_iOS_SDK', '~> 4.52.1'
 
 end

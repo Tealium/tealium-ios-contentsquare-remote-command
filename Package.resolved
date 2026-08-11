@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "ContentsquareCore",
+        "repositoryURL": "https://github.com/ContentSquare/apple-core-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "f74fec520fffa09210b168df8af6e92a42332a5f",
+          "version": "0.2.0"
+        }
+      },
+      {
         "package": "CSCrashReporter",
         "repositoryURL": "https://github.com/ContentSquare/CS_iOS_CrashReporter.git",
         "state": {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/ContentSquare/CS_iOS_SDK",
         "state": {
           "branch": null,
-          "revision": "7058d9d7535eac0a94d4aa39a160ecaf02cba7b0",
-          "version": "4.41.3"
+          "revision": "b2107a2dd8036ea1ffa72cc795a3a22a5ae4911b",
+          "version": "4.52.1"
         }
       },
       {
@@ -24,8 +33,17 @@
         "repositoryURL": "https://github.com/ContentSquare/CSSwiftProtobuf.git",
         "state": {
           "branch": null,
-          "revision": "69144f5873981ce36d53ec188da920f0e05d4cf2",
-          "version": "1.28.2"
+          "revision": "0f26877bd719c45219a3063696d0d1d600a08c48",
+          "version": "1.33.3"
+        }
+      },
+      {
+        "package": "ContentsquareUICore",
+        "repositoryURL": "https://github.com/contentsquare/ios-ui-core-sdk.git",
+        "state": {
+          "branch": null,
+          "revision": "5b5fe868c216c415114c4cb0309125d9a44d1999",
+          "version": "0.1.0"
         }
       },
       {

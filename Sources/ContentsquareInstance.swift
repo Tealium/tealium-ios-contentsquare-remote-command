@@ -16,7 +16,6 @@ public protocol ContentsquareCommand {
     func sendUserIdentifier(userId: String)
     func stopTracking()
     func resumeTracking()
-    func forgetMe()
     func optIn()
     func optOut()
 }
@@ -84,10 +83,6 @@ public class ContentsquareInstance: ContentsquareCommand {
     
     public func resumeTracking() {
         Contentsquare.resumeTracking()
-    }
-    
-    public func forgetMe() {
-        Contentsquare.forgetMe()
     }
     
     public func optIn() {

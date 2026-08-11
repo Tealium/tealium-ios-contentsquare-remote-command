@@ -308,14 +308,6 @@ extension ContentsquareInstanceTests {
         XCTAssertTrue(contentsquareInstance.didResumeTracking)
     }
     
-    func testForgetMeCalled() {
-        contentsquareCommand.processRemoteCommand(with: [
-            "command_name": "forgetme"
-        ])
-        
-        XCTAssertTrue(contentsquareInstance.didForgetMe)
-    }
-    
     func testOptInCalled() {
         contentsquareCommand.processRemoteCommand(with: [
             "command_name": "optin"
@@ -341,6 +333,5 @@ extension ContentsquareInstanceTests {
         XCTAssertTrue(contentsquareInstance.didResumeTracking)
         XCTAssertTrue(contentsquareInstance.didOptIn)
         XCTAssertFalse(contentsquareInstance.didOptOut)
-        XCTAssertFalse(contentsquareInstance.didForgetMe)
     }
 }

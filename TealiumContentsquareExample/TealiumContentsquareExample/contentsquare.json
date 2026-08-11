@@ -18,7 +18,6 @@
     "user_identifier": "senduseridentifier",
     "stop_tracking": "stoptracking",
     "resume_tracking": "resumetracking",
-    "forget_me": "forgetme",
     "opt_in": "optin",
     "opt_out": "optout"
   }

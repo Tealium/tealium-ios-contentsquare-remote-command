@@ -80,8 +80,6 @@ public class ContentsquareRemoteCommand: RemoteCommand {
                 contentsquareInstance.stopTracking()
             case .resumeTracking:
                 contentsquareInstance.resumeTracking()
-            case .forgetMe:
-                contentsquareInstance.forgetMe()
             case .optIn:
                 contentsquareInstance.optIn()
             case .optOut:

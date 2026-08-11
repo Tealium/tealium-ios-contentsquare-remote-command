@@ -21,7 +21,6 @@ class MockContentsquareInstance: ContentsquareCommand {
     // Tracking calls
     var didStopTracking = false
     var didResumeTracking = false
-    var didForgetMe = false
     var didOptIn = false
     var didOptOut = false
     
@@ -50,10 +49,6 @@ class MockContentsquareInstance: ContentsquareCommand {
     
     func resumeTracking() {
         didResumeTracking = true
-    }
-    
-    func forgetMe() {
-        didForgetMe = true
     }
     
     func optIn() {

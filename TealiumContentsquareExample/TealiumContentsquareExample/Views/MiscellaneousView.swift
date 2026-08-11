@@ -22,11 +22,6 @@ struct MiscellaneousView: View {
                 Text("Resume Tracking")
             }.bordered()
             Button(action: {
-                self.forgetMe()
-            }) {
-                Text("Forget Me")
-            }.bordered()
-            Button(action: {
                 self.optIn()
             }) {
                 Text("Opt In")
@@ -48,10 +43,6 @@ extension MiscellaneousView {
     
     func resumeTracking() {
         TealiumHelper.track(title: "resume_tracking", data: nil)
-    }
-    
-    func forgetMe() {
-        TealiumHelper.track(title: "forget_me", data: nil)
     }
     
     func optIn() {
