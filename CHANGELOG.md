@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [3.0.0]
+## [3.0.0] - 2026-08-11
 
 ### Removed
 - **BREAKING:** Removed the `forgetMe` command. Contentsquare deprecated `forgetMe` in SDK 2.28.0 and removed it in SDK 4.45.0. There is no direct replacement; refer to the [Contentsquare privacy documentation](https://docs.contentsquare.com/en/ios/privacy/#forget-me) for guidance.
