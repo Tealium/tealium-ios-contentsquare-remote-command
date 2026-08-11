@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 
     # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.swift_version = "5.1"
-    s.platform     = :ios, "12.0"    
+    s.platform     = :ios, "13.0"    
 
     # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
     s.source       = { :git => "https://github.com/Tealium/tealium-ios-contentsquare-remote-command.git", :tag => "#{s.version}" }
