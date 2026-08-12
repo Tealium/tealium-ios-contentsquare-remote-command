@@ -19,6 +19,8 @@
 		CFE092162537AF74005E09AB /* ContentsquareConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092142537AF74005E09AB /* ContentsquareConstants.swift */; };
 		CFE092172537AF74005E09AB /* ContentsquareRemoteCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092152537AF74005E09AB /* ContentsquareRemoteCommand.swift */; };
 		CFE0921A2537AFC8005E09AB /* ContentsquareInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE092192537AFC8005E09AB /* ContentsquareInstance.swift */; };
+		E514CF36302C6A77009A0A54 /* ContentsquareUICore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E514CF34302C6A77009A0A54 /* ContentsquareUICore.xcframework */; };
+		E514CF38302C6A77009A0A54 /* ContentsquareCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E514CF35302C6A77009A0A54 /* ContentsquareCore.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		CFE092142537AF74005E09AB /* ContentsquareConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareConstants.swift; sourceTree = "<group>"; };
 		CFE092152537AF74005E09AB /* ContentsquareRemoteCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareRemoteCommand.swift; sourceTree = "<group>"; };
 		CFE092192537AFC8005E09AB /* ContentsquareInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentsquareInstance.swift; sourceTree = "<group>"; };
+		E514CF34302C6A77009A0A54 /* ContentsquareUICore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:68F5DK9B95:CONTENT SQUARE"; lastKnownFileType = wrapper.xcframework; name = ContentsquareUICore.xcframework; path = Carthage/Build/ContentsquareUICore.xcframework; sourceTree = "<group>"; };
+		E514CF35302C6A77009A0A54 /* ContentsquareCore.xcframework */ = {isa = PBXFileReference; expectedSignature = "AppleDeveloperProgram:68F5DK9B95:CONTENT SQUARE"; lastKnownFileType = wrapper.xcframework; name = ContentsquareCore.xcframework; path = Carthage/Build/ContentsquareCore.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				15430459277C6820004FF14A /* TealiumCore.xcframework in Frameworks */,
+				E514CF38302C6A77009A0A54 /* ContentsquareCore.xcframework in Frameworks */,
+				E514CF36302C6A77009A0A54 /* ContentsquareUICore.xcframework in Frameworks */,
 				1543045A277C6820004FF14A /* TealiumRemoteCommands.xcframework in Frameworks */,
 				9E6990102DDB423A0005BB8B /* CSSwiftProtobuf.xcframework in Frameworks */,
 				9E6990192DDB47670005BB8B /* CSCrashReporter.xcframework in Frameworks */,
@@ -92,6 +98,8 @@
 		4BE614002412FF7700C4B1EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E514CF35302C6A77009A0A54 /* ContentsquareCore.xcframework */,
+				E514CF34302C6A77009A0A54 /* ContentsquareUICore.xcframework */,
 				9E6990182DDB47670005BB8B /* CSCrashReporter.xcframework */,
 				9E69900F2DDB423A0005BB8B /* CSSwiftProtobuf.xcframework */,
 				15430453277C6820004FF14A /* ContentsquareModule.xcframework */,
